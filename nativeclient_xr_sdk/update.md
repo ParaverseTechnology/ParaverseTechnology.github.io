@@ -251,3 +251,60 @@ static bool use_10bit_encoder;
 // 是否上报 fec 失败，当当前 fec 实效时通知服务端加大冗余包 (3.1.8.0新增)
 static bool report_fec_failed;
 ```
+
+## V3.2.0.2
+
+1. 更新服务器接口到 3.2。 注意 3.2 版本服务器不向下兼容 3.1 版本。
+2. 添加数据通道支持。
+
+XRClient 类添加如下成员方法：
+
+```c++
+/**
+    * 发送自定义数据给云端应用
+    * @param buffer
+    * @param length
+    */
+void SendData(const char* buffer, int length);
+/**
+    * 发送自定义数据给云端应用
+    * @param buffer
+    * @param length
+    */
+void SendData(const std::string& data);
+```
+
+XRClientObserver 添加数据通道回调：
+
+```c++
+/**
+* 数据通道开启
+*/
+virtual void OnDataChannelOpen() = 0;
+/**
+* 数据通道关闭
+*/
+virtual void OnDataChannelClose() = 0;
+/**
+* 收到二进制数据
+*/
+virtual void OnDataChannelData(const char* buffer, int length) = 0;
+/**
+* 收到字符数据
+*/
+virtual void OnDataChannelData(const std::string& data) = 0;
+```
+
+
+3. 可以发送音频数据到云端应用。
+
+XRClient 类添加如下成员方法：
+
+```c++
+/**
+    * 发送音频数据给云端
+    * @param buffer
+    * @param length
+    */
+void SendAudioData(const char* buffer, int length);
+```
