@@ -316,6 +316,34 @@ std::string last_error_message();
 void ClearError();
 ```
 
+* 数据通道
+
+```c++
+/**
+    * 发送自定义数据给云端应用
+    * @param buffer
+    * @param length
+    */
+void SendData(const char* buffer, int length);
+/**
+    * 发送自定义数据给云端应用
+    * @param buffer
+    * @param length
+    */
+void SendData(const std::string& data);
+```
+
+* 音频数据
+
+```c++
+/**
+* 发送音频数据给云端
+* @param buffer
+* @param length
+*/
+void SendAudioData(const char* buffer, int length);
+```
+
 #### 回调函数
 
 XRClientObserver 类包含需要实现的纯虚函数。注册为 XRClient 的回调函数成功后将根据具体情况调用。 需要注意所有回调函数都不保证在 opengl 渲染线程下调用。需要注意需要在 opengl 渲染线程的操作。
@@ -441,6 +469,22 @@ virtual void OnHapticsFeedback(bool isLeft, uint64_t startTime, float amplitude,
 * 请求同步玩家区域数据
 */
 virtual void OnSyncPlayerSpace(larkxrPlaySpace* playSpace) = 0;
+/**
+* 数据通道开启
+*/
+virtual void OnDataChannelOpen() = 0;
+/**
+* 数据通道关闭
+*/
+virtual void OnDataChannelClose() = 0;
+/**
+* 收到二进制数据
+*/
+virtual void OnDataChannelData(const char* buffer, int length) = 0;
+/**
+* 收到字符数据
+*/
+virtual void OnDataChannelData(const std::string& data) = 0;
 ```
 
 ### 其他

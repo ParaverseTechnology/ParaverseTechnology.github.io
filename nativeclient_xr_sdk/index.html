@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.1 原生 XR 客户端 SDK · pingxingyun</title>
+        <title>2.1 原生 Android XR 客户端 SDK · pingxingyun</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -218,7 +218,7 @@
                 <a href="./">
             
                     
-                    2.1 原生 XR 客户端 SDK
+                    2.1 原生 Android XR 客户端 SDK
             
                 </a>
             
@@ -252,12 +252,32 @@
         
         
     
-        <li class="chapter " data-level="4.1" data-path="../androidclient_sr_sdk/">
+        <li class="chapter " data-level="4.1" data-path="../unity3d_client_xr_sdk/">
+            
+                <a href="../unity3d_client_xr_sdk/">
+            
+                    
+                    3.1 Unity3D XR 客户端 SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../androidclient_sr_sdk/">
             
                 <a href="../androidclient_sr_sdk/">
             
                     
-                    3.1 Android SR 客户端 SDK
+                    4.1 Android SR 客户端 SDK
             
                 </a>
             
@@ -266,12 +286,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.1.1" data-path="../androidclient_sr_sdk/update.html">
+        <li class="chapter " data-level="5.1.1" data-path="../androidclient_sr_sdk/update.html">
             
                 <a href="../androidclient_sr_sdk/update.html">
             
                     
-                    3.2 更新说明
+                    4.2 更新说明
             
                 </a>
             
@@ -291,12 +311,12 @@
         
         
     
-        <li class="chapter " data-level="5.1" data-path="../datachannel/">
+        <li class="chapter " data-level="6.1" data-path="../datachannel/">
             
                 <a href="../datachannel/">
             
                     
-                    4.1 数据通道Unity插件
+                    5.1 数据通道Unity插件
             
                 </a>
             
@@ -304,12 +324,19 @@
             
         </li>
     
-        <li class="chapter " data-level="5.2" data-path="../cloudapp/ue4_mouse_mode.html">
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../cloudapp/ue4_mouse_mode.html">
             
                 <a href="../cloudapp/ue4_mouse_mode.html">
             
                     
-                    5.1 云端应用开发
+                    6.1 云端应用开发
             
                 </a>
             
@@ -347,7 +374,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >2.1 原生 XR 客户端 SDK</a>
+        <a href=".." >2.1 原生 Android XR 客户端 SDK</a>
     </h1>
 </div>
 
@@ -636,6 +663,32 @@ xr_client_.Init(java_.Vm);
  */</span>
 <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">ClearError</span><span class="hljs-params">()</span></span>;
 </code></pre>
+<ul>
+<li>&#x6570;&#x636E;&#x901A;&#x9053;</li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-comment">/**
+    * &#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7ED9;&#x4E91;&#x7AEF;&#x5E94;&#x7528;
+    * @param buffer
+    * @param length
+    */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SendData</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer, <span class="hljs-keyword">int</span> length)</span></span>;
+<span class="hljs-comment">/**
+    * &#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7ED9;&#x4E91;&#x7AEF;&#x5E94;&#x7528;
+    * @param buffer
+    * @param length
+    */</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SendData</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; data)</span></span>;
+</code></pre>
+<ul>
+<li>&#x97F3;&#x9891;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-c++"><span class="hljs-comment">/**
+* &#x53D1;&#x9001;&#x97F3;&#x9891;&#x6570;&#x636E;&#x7ED9;&#x4E91;&#x7AEF;
+* @param buffer
+* @param length
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">SendAudioData</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer, <span class="hljs-keyword">int</span> length)</span></span>;
+</code></pre>
 <h4 id="&#x56DE;&#x8C03;&#x51FD;&#x6570;"><a name="&#x56DE;&#x8C03;&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x56DE;&#x8C03;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x56DE;&#x8C03;&#x51FD;&#x6570;" class="plugin-anchor" href="#&#x56DE;&#x8C03;&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DE;&#x8C03;&#x51FD;&#x6570;</h4>
 <p>XRClientObserver &#x7C7B;&#x5305;&#x542B;&#x9700;&#x8981;&#x5B9E;&#x73B0;&#x7684;&#x7EAF;&#x865A;&#x51FD;&#x6570;&#x3002;&#x6CE8;&#x518C;&#x4E3A; XRClient &#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x6210;&#x529F;&#x540E;&#x5C06;&#x6839;&#x636E;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x8C03;&#x7528;&#x3002; &#x9700;&#x8981;&#x6CE8;&#x610F;&#x6240;&#x6709;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x90FD;&#x4E0D;&#x4FDD;&#x8BC1;&#x5728; opengl &#x6E32;&#x67D3;&#x7EBF;&#x7A0B;&#x4E0B;&#x8C03;&#x7528;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x9700;&#x8981;&#x5728; opengl &#x6E32;&#x67D3;&#x7EBF;&#x7A0B;&#x7684;&#x64CD;&#x4F5C;&#x3002;</p>
 <ul>
@@ -754,6 +807,22 @@ xr_client_.Init(java_.Vm);
 * &#x8BF7;&#x6C42;&#x540C;&#x6B65;&#x73A9;&#x5BB6;&#x533A;&#x57DF;&#x6570;&#x636E;
 */</span>
 <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnSyncPlayerSpace</span><span class="hljs-params">(larkxrPlaySpace* playSpace)</span> </span>= <span class="hljs-number">0</span>;
+<span class="hljs-comment">/**
+* &#x6570;&#x636E;&#x901A;&#x9053;&#x5F00;&#x542F;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDataChannelOpen</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;
+<span class="hljs-comment">/**
+* &#x6570;&#x636E;&#x901A;&#x9053;&#x5173;&#x95ED;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDataChannelClose</span><span class="hljs-params">()</span> </span>= <span class="hljs-number">0</span>;
+<span class="hljs-comment">/**
+* &#x6536;&#x5230;&#x4E8C;&#x8FDB;&#x5236;&#x6570;&#x636E;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDataChannelData</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* buffer, <span class="hljs-keyword">int</span> length)</span> </span>= <span class="hljs-number">0</span>;
+<span class="hljs-comment">/**
+* &#x6536;&#x5230;&#x5B57;&#x7B26;&#x6570;&#x636E;
+*/</span>
+<span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnDataChannelData</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&amp; data)</span> </span>= <span class="hljs-number">0</span>;
 </code></pre>
 <h3 id="&#x5176;&#x4ED6;"><a name="&#x5176;&#x4ED6;" class="anchor-navigation-ex-anchor" href="#&#x5176;&#x4ED6;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5176;&#x4ED6;" class="plugin-anchor" href="#&#x5176;&#x4ED6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x4ED6;</h3>
 <h4 id="&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;"><a name="&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x548C;&#x8FD0;&#x884C;&#x6A21;&#x5F0F;</h4>
@@ -903,7 +972,7 @@ xr_client_.Init(java_.Vm);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.1 原生 XR 客户端 SDK","level":"3.1","depth":1,"next":{"title":"2.2 更新说明","level":"3.1.1","depth":2,"path":"nativeclient_xr_sdk/update.md","ref":"./nativeclient_xr_sdk/update.md","articles":[]},"previous":{"title":"1.6 事件","level":"2.1.5","depth":2,"path":"webclient_sdk/events.md","ref":"./webclient_sdk/events.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"nativeclient_xr_sdk/README.md","mtime":"2021-12-17T09:38:40.966Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-17T09:41:00.833Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.1 原生 Android XR 客户端 SDK","level":"3.1","depth":1,"next":{"title":"2.2 更新说明","level":"3.1.1","depth":2,"path":"nativeclient_xr_sdk/update.md","ref":"./nativeclient_xr_sdk/update.md","articles":[]},"previous":{"title":"1.6 事件","level":"2.1.5","depth":2,"path":"webclient_sdk/events.md","ref":"./webclient_sdk/events.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"nativeclient_xr_sdk/README.md","mtime":"2021-12-21T08:09:14.779Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-12-21T09:57:36.938Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
