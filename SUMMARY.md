@@ -28,7 +28,7 @@
 ---
 
 * [5.1 数据通道Unity插件](./datachannel/README.md)
-
+    * [5.2 在 UE4 中使用 DataChannel 中附带 Demo Plugin](./datachannel/ue4_datachannel_blueprint.md)
 ---
 
 * [6.1 云端应用开发](./cloudapp/ue4_mouse_mode.md)
