@@ -10,6 +10,8 @@
     * [1.4 方法](./webclient_sdk/functions.md)
     * [1.5 变量](./webclient_sdk/member_variables.md)
     * [1.6 事件](./webclient_sdk/events.md)
+    * [1.7 SDK 加密](./webclient_sdk/sdkid_encryption.md)
+    * [1.8 更新](./webclient_sdk/update.md)
 
 ---
 

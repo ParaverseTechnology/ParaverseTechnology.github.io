@@ -12,29 +12,29 @@
 
 2. 对 SDK ID 进行加密
 
-以下 java 代码为例:
+    以下 java 代码为例:
 
-```java
-public static void main(String[] args) {
-    /**
-    * @param res   被加密的原生字符串
-    * @param key  16位字符作为加密的key
-    */
-    try {
-        String res = "被加密的原生字符串";
-        String key = "16位字符作为加密的key";
-        String ALGORITHM = "AES";
-        String CHARSET = "UTF-8";
-        SecretKeySpec sks = new SecretKeySpec(key.getBytes(CHARSET), ALGORITHM);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(cipher.ENCRYPT_MODE, sks);
-        byte[] result = cipher.doFinal(res.getBytes());
-        // BASE64Encoder encoder = new BASE64Encoder();      //java8
-        Base64.Encoder encoder = Base64.getEncoder(); //java9+
-        System.out.println(encoder.encodeToString(result));
-    }catch (Exception e){
+    ```java
+    public static void main(String[] args) {
+        /**
+        * @param res   被加密的原生字符串
+        * @param key  16位字符作为加密的key
+        */
+        try {
+            String res = "被加密的原生字符串";
+            String key = "16位字符作为加密的key";
+            String ALGORITHM = "AES";
+            String CHARSET = "UTF-8";
+            SecretKeySpec sks = new SecretKeySpec(key.getBytes(CHARSET), ALGORITHM);
+            Cipher cipher = Cipher.getInstance(ALGORITHM);
+            cipher.init(cipher.ENCRYPT_MODE, sks);
+            byte[] result = cipher.doFinal(res.getBytes());
+            // BASE64Encoder encoder = new BASE64Encoder();      //java8
+            Base64.Encoder encoder = Base64.getEncoder(); //java9+
+            System.out.println(encoder.encodeToString(result));
+        }catch (Exception e){
+        }
     }
-}
-```
+    ```
 
 3. 获取到加密好的字符串传入 lark 配置中即可。
