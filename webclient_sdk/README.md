@@ -21,6 +21,11 @@ SDK 功能包括:
 * 处理全屏模式，并可配置
 * 自动处理横屏模式，手机端强制横屏模式，并可配置
 
+### 注意
+
+> V3.2.30 仅支持服务端 [V3.2.3.1](https://www.pingxingyun.com/devCenter.html) 以上版本。
+> [老版本 SDK Demo 下载](https://github.com/pingxingyun/lark_sr_websdk_demos/releases/tag/V3.2.10)
+
 ## 快速接入
 
 ### 安装
@@ -42,46 +47,48 @@ npm i larksr_websdk
 使用前应准备好
 
 1. Lark 服务器前台可访问的地址, 如：http://222.128.6.137:8181/
-2. SDK 授权码，联系 business@pingxingyun.com 获取,注意是 SDK 本身的授权码，不是服务器上的授权
+2. SDK 授权码，联系 business@pingxingyun.com 获取, 注意是 SDK 本身的授权码，不是服务器上的授权
 3. 系统中获取的应用 ID,如 http://222.128.6.137:8181/ 系统下的 879408743551336448
 
 ```javascript
-var client;
-// 直接调用进入应用接口创建实例，自动配置连接云端资源
-larksr_websdk.CreateLarkSRClientFromeAPI({
-        // 设置挂载显示的元素
-        // 注意*不要*设置为 document.documentElement
-        rootElement: document.getElementById('container'),
-        // 服务器地址,实际使用中填写您的服务器地址
-        // 如：http://222.128.6.137:8181/
-        serverAddress: "Lark 服务器前台地址",
-        // 授权码
-        authCode: '您的 SDK 授权码',
-        // 测试载入背景图
-        // loadingBgUrl: 'https://home-obs.pingxingyun.com/homePage_4_0/bg.jpg',
-    }, {
-        // 要使用的云端资源的应用 ID，从后云雀后台接口获取
-        // 参考查询应用一栏文档
-        // https://www.pingxingyun.com/online/api3_2.html?id=476
-        // 如 222.128.6.137:8181 系统下的 879408743551336448 应用
-        appliId: "应用ID"
-    })
-    .then((res) => {
-        console.log('enter appli success', res);
-        // 创建成返回 LarkSR 实例
-        client = res;
-        // 开始流程
-        client.start();
-    })
-    .catch((e) => {
-        // 创建失败返回错误
-        console.error('enter appli falied', e);
-    });
+var client = new LarkSR({ 
+    // 设置挂载显示的元素
+    // 注意*不要*设置为 document.documentElement
+    rootElement: document.getElementById('container'),
+    // 服务器地址,实际使用中填写您的服务器地址
+    // 如：http://222.128.6.137:8181/
+    // 当使用平行云托管服务时服务器地址自动分配,可留空。
+    // larksr.connectWithPxyHost 进入应用
+    serverAddress: "Lark 服务器前台地址",
+    // SDK ID 也可在 initSDKAuthCode 设置
+    authCode: '您的 SDK ID',
+    // 测试载入背景图
+    // loadingBgUrl: 'https://home-obs.pingxingyun.com/homePage_4_0/bg.jpg',
+});
+
+// start connect;
+// 使用平行云托管服务时，用 connectWithPxyHost 进入应用并自动分配服务器.
+client.connect({
+    // 要使用的云端资源的应用 ID，从后云雀后台接口获取
+    // 参考查询应用一栏文档
+    // https://www.pingxingyun.com/online/api3_2.html?id=476
+    // 如 222.128.6.137:8181 系统下的 879408743551336448 应用
+    appliId: "应用ID"
+})
+.then(() => {
+    console.log('enter success');
+})
+.catch((e) => {
+    console.error(e);
+}); 
+// ...
+// 主动关闭并清理资源
+// client.close();
 ```
 
 SDK 加载成功之后，非模块模式下，SDK 挂载为全局对象 larksr_websdk。
 
-连接云端资源，管理生命周期和事件等主要在 LarkSR 对象下。通过调用 CreateLarkSRClientFromeAPI 配置后台请求参数，创建 LarkSR 对象实例。
+连接云端资源，管理生命周期和事件等主要在 LarkSR 对象下。
 
 > 默认情况下自动连接云端资源，将容器设置为浏览器视口高度，并配置网页 100% 宽高显示。SDK 内部自动处理按键输入输出。
 
@@ -92,3 +99,5 @@ SDK 加载成功之后，非模块模式下，SDK 挂载为全局对象 larksr_w
 更多使用方式和 API 文档可以参考下面项目和 doc 文件夹下的详细文档
 
 [Demos](https://github.com/pingxingyun/lark_sr_websdk_demos)
+
+[Docs](https://pingxingyun.github.io/webclient_sdk/)
