@@ -120,3 +120,54 @@
 
 > 数据通道连通后可以根据业务需要进行网页的二次开发对接。
 > 可参考项目[lark_xr_unity3d_demos](https://github.com/pingxingyun/lark_xr_unity3d_demos) [vh-webclient](https://github.com/pingxingyun/vh-webclient) 中的网页前端代码
+
+## 智能语音相关功能
+
+### LarkXRAiVoice.h
+
+C++ 中可直接调用 LarkXRDataChannel64 中的接口
+
+开启智能语音功能并注册回调函数,要注意在数据通道开启之后再启用智能语音功能
+
+```c++
+LARKXR_API int  DC_CALL lr_client_register_aivoice_callback(on_aivoice_callback cb,void* user_data);
+```
+
+回调数据结构
+
+```c++
+struct AiVoicePacket
+{
+  bool	url;				//true :online audio url(mp3) .false: audio pack (pcm)
+  unsigned int voice_id;		//语音ID
+  const char* online_url;		//如果url为true,该字段为url地址,否则该字段为NULL 
+  int	    url_size;			//url长度 包含\0
+  const char* nlg;			//当前语音对讲的文本
+  int	    nlg_size;			//对讲文本长度 包含\0
+
+  //如果URL为false 那么下面字段描述每一个pcm包
+  unsigned int slice_id;		//一个语音分片ID
+  int		samples_per_sec;	//eg.16000
+  int		channels;		    //eg.1
+  const char* audio;			//数据包指针,如果 url 为true 该字段为空
+  int		size_byte;			//每一包的字节数
+  bool	last_packet;		//是否为最后一包
+};
+typedef void(*on_aivoice_callback)(struct AiVoicePacket* packet,void* user_data);
+```
+
+### 在蓝图中开启并订阅回调
+
+> 当数据通道连接成功时开启智能语音服务功能
+
+
+当 `LR_Client_Start` 成功之后通过 `LR_Client_AiVoice_Start` 启动智能语音功能
+
+![开启智能语音功能](img_ue_datachannel_2/28.png)
+
+![监听并打印回调](img_ue_datachannel_2/29.png)
+
+#### 打包发布
+
+1. 服务器应确认有智能语音授权
+2. 在 LarkXR `后台应用管理`-`通用高级设置`-`智能语音` 选择 `是`
