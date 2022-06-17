@@ -39,4 +39,5 @@
     * [7.2 Android 客户端开发](./nativeclient_ar_sdk/client_android/README.md)
     * [7.3 云端应用-Unity3D](./nativeclient_ar_sdk/cloudapp_unity/README.md)
     * [7.4 云端应用-Unreal](./nativeclient_ar_sdk/cloudapp_unreal/README.md)
+    * [7.5 云端应用-CloudXR 适配要求](./nativeclient_ar_sdk/cloudapp_cloudxr/README.md)
 ---
