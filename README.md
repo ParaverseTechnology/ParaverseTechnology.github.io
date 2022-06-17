@@ -14,7 +14,7 @@
 | WebClient SR SDK | Browser | [Demos](https://github.com/pingxingyun/lark_sr_websdk_demos) |
 | WebClient Iframe | Browser | [Demos](https://github.com/pingxingyun/larkwebclient-iframe-demos) |
 | | MipApps | [uniapp demo](https://github.com/pingxingyun/uniapp_demo) |
-| Native XR SDK | Android XR Devices | [Dowload](https://github.com/pingxingyun/larkxr_native_android_app/releases/) [Demos](https://github.com/pingxingyun/larkxr_native_android_app)|
+| Native XR SDK | Android XR Devices / Android Phone | [Dowload](https://github.com/pingxingyun/larkxr_native_android_app/releases/) [Demos](https://github.com/pingxingyun/larkxr_native_android_app) [AR DEMOS](https://github.com/pingxingyun/larkar_demos) |
 || Win | DOING |
 || UWP(Holones) | DOING |
 || iOS | TO BE DONE |

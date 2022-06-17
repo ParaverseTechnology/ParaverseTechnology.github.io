@@ -35,4 +35,8 @@
 
 * [6.1 云端应用开发](./cloudapp/ue4_mouse_mode.md)
 
+* [7.1 LarkXR-AR 接入和 Demo](./nativeclient_ar_sdk/README.md)
+    * [7.2 Android 客户端开发](./nativeclient_ar_sdk/client_android/README.md)
+    * [7.3 云端应用-Unity3D](./nativeclient_ar_sdk/cloudapp_unity/README.md)
+    * [7.4 云端应用-Unreal](./nativeclient_ar_sdk/cloudapp_unreal/README.md)
 ---
