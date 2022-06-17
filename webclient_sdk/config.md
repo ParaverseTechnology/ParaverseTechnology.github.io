@@ -87,7 +87,10 @@ interface ILarkSRConfig {
     perferDecoder?: 'auto' | 'vp8' | 'vp9' | 'h264' | 'av1x';
     /**
      * 可选项，视频在容器中的缩放模式
-     *
+     * 'contain' | 'fill_clip' | 'fill_stretch'
+     * contain: 以应用原始尺寸的缩放
+     * fill_clip: 裁剪模式，完全填充屏幕但保留宽高比
+     * fill_stretch: 拉伸模式，完全填充屏幕但不保留宽高比
      */
     scaleMode?: ScaleMode;
     /**
@@ -118,5 +121,18 @@ interface ILarkSRConfig {
      * }
      */
     publicPortMapping?: PublicPortMapping;
+    /**
+     * 是否提示输入文字 APP_REQUEST_INPUT
+     * 当服务端检测到输入法事件后会抛出事件，可在 web 层添加输入框，配合 inputText 发送文字到云端
+     * 默认打开，当手动关闭时将不会抛出 APP_REQUEST_INPUT 事件
+     */
+    textInputEventPrompt?: boolean;
+
+    /**
+     * 当启用音频输入功能，是否自动连入音频设备。
+     * 默认关闭。
+     * 需要注意默认打开的时系统中默认的音频设备。
+     */
+    audioInputAutoStart?: boolean;
 }
 ```

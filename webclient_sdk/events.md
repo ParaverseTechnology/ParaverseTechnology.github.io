@@ -22,6 +22,15 @@ larksr.on('connect', function(e) {
  */
 declare const enum LarkSRClientEvent {
     /**
+     * TASK 创建成功，返回 Task 相关信息
+     */
+    TASK_CREATE_SUCCESS = 'taskcreatesuccess',
+
+    /**
+     * TASK 创建失败
+     */
+    TASK_CREATE_FAILED = 'taskcreatefailed',
+    /**
      * 连接渲染服务器成功 .
      */
     CONNECT = "connect",
@@ -107,6 +116,7 @@ declare const enum LarkSRClientEvent {
     DATACHANNEL_CLOSE = "datachannelclose",
     /**
      * 数据通达收到文字消息 .
+     * > V3.2.314 版本对应服务器版本和数据通道版本为 3.2.5.1 及以上
      */
     DATACHANNEL_TEXT = "datachanneltext",
     /**

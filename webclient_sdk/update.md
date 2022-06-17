@@ -96,3 +96,14 @@ getConnectedAudioinputDevices(): Promise<MediaDeviceInfo[] | undefined>;
  */
 setAudioEnable(enable: boolean): void | undefined;
 ```
+
+larksr 配置项新增自动打开麦克风配置,在`new LarkSR({ ... 此处省略其他配置 ... audioInputAutoStart: true})` 时传入，
+
+```javascript
+/**
+* 当启用音频输入功能，是否自动连入音频设备。
+* 默认关闭。
+* 需要注意默认打开的时系统中默认的音频设备。
+*/
+audioInputAutoStart?: boolean;
+```
