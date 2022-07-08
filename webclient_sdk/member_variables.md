@@ -183,7 +183,7 @@ larksr.op.gestureHandler.tapLimitTimeout = 100;
 
 可以通过拦截触摸事件回调的方式，设置具体的触摸事件和鼠标事件的对应关系。
 
-> 通过 larksr.op.gestureHandler 设置回调函数
+> 通过 larksr.op.gestureHandler.gestureCallback 设置回调函数
 > 下面例子中的 GESTURE_TYPE 为 SDK 导出的手势事件类型，如果用 amd 方式引入的 SDK，所有导出类型均在 larksr_websdk 全局对象下。
 > 如果是使用其他方式引入 SDK，如 improt 方式导入 `import { GESTURE_TYPE } from 'larksr_websdk'`
 > 以下示例代码忽略 larksr 创建等过程
@@ -200,7 +200,7 @@ larksr.op.gestureHandler.tapLimitTimeout = 100;
 //      rawEvent: any;      未转换为云端坐标的触摸事件
 //    }
 // 
-larksr.op.gestureHandler = (event) => {
+larksr.op.gestureHandler.gestureCallback = (event) => {
     console.log(event);
     const p = event;
     switch (event.type) {
