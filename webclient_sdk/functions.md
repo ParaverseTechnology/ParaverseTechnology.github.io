@@ -446,9 +446,11 @@ RTMP_STREAM_ERROR = "rtmpstreamerror"
 /**
  * 采集一帧图像
  * @params data: any 抛出采集事件时抛出的附加data，比如采集的时间戳
+ * @params option:  { width: number, height: number } 截图的宽高，如果未设置则使用云端应用窗口的宽高
  * @return { data: any, base64: base64string } 返回传入的 data 和采集的 base64 字符串
  */
-captrueFrame(data: any)
+captrueFrame(data: any, option?: { width: number; height: number;})
+
 /**
  * 设置是否强制横屏显示内容.
  * handelRootElementSize 必须设置为 true 才有作用。
