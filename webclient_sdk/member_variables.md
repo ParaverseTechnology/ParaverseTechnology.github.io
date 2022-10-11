@@ -158,6 +158,20 @@ export enum APP_STATE {
 }
 ```
 
+可通过事件 `APPSTATE_CHANGE = 'appstatechange'` 监听 APP_STATE 的变化
+
+```javascript
+// create code
+...
+
+// 监听连接成功事件
+larksr.on('appstatechange', function(e) { 
+    console.log("appstatechange", e); 
+});
+```
+
+## 云端画面是否准备好
+
 ```javascript
 // 云端画面是否准备好，准备好后才可以发送输入事件
 larksr.remoteScreenReady
@@ -192,6 +206,14 @@ larksr.screenState.isMobile;
 larksr.screenState.isLocalRenderMouse;
 // 是否锁定鼠标
 larksr.screenState.isLockMosue;
+```
+
+监听 screenState 的状态改变，事件码为 `0`。当 SDK 内部或者外部触发了 `screenState.resize()` 之后调用。
+
+```javascript
+larksr.screenState.on(0, () => {
+    console.log("screen state resize", larksr.screenState.screenOrientation);
+});
 ```
 
 ## 操作类实例

@@ -517,6 +517,13 @@ larksr.on(<span class="hljs-string">&apos;connect&apos;</span>, <span class="hlj
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;LarkSRClientEvent CONNECT&quot;</span>, e); 
 });
 </code></pre>
+<p>&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5BFC;&#x51FA;&#x679A;&#x4E3E;&#x503C;</p>
+<pre><code class="lang-javascript">larksr.on(LarkSRClientEvent.TASK_CREATE_SUCCESS, (e) =&gt; { 
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;LarkSRClientEvent TASK_CREATE_SUCCESS&quot;</span>, e); 
+});
+</code></pre>
+<p>&#x5176;&#x4E2D; <code>LarkEvent = &apos;larkevent&apos;</code>, <code>ERROR = &apos;error&apos;</code>, <code>INFO = &apos;info&apos;</code> &#x8FD9;&#x4E09;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x9644;&#x52A0; code &#x5B57;&#x6BB5;&#xFF0C;code &#x5B57;&#x6BB5;&#x9644;&#x52A0;&#x4E8B;&#x4EF6;&#x7801;&#xFF1A;<a href="event_codes.md">event_codes</a>
+<a href="event_codes.md">event_codes</a> &#x4E2D;&#x7684;&#x4E8B;&#x4EF6; code &#x503C;&#xFF0C;&#x5728; LarkEvent &#x4E8B;&#x4EF6;&#x4E2D;&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x3002;</p>
 <h2 id="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><a name="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;</h2>
 <pre><code class="lang-javascript"><span class="hljs-comment">/**
  * LarkSR &#x5B9E;&#x4F8B;&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;
@@ -654,6 +661,30 @@ declare <span class="hljs-keyword">const</span> enum LarkSRClientEvent {
     LarkEvent = <span class="hljs-string">&quot;larkevent&quot;</span>,
     <span class="hljs-comment">/**
      * &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x629B;&#x51FA;
+     * type:     error
+     * message: &#x9519;&#x8BEF;&#x6D88;&#x606F;
+     * code:    &#x53EF;&#x80FD;&#x7684;&#x9519;&#x8BEF;&#x7801;&#x5982;&#x4E0B;, &#x9519;&#x8BEF;&#x7801;&#x7684;&#x5177;&#x4F53;&#x5B9A;&#x4E49; @see [./event_codes]
+     *          // &#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7684;websocket&#x4EE3;&#x7406;&#x5173;&#x95ED;
+     *          LK_RENDER_SERVER_CLOSE                    : 102
+     *          // &#x8FDE;&#x63A5;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7684;websocket&#x5173;&#x95ED;
+     *          LK_PROXY_SERVER_CLOSE                     : 202
+     *          // &#x68C0;&#x6D4B;&#x7248;&#x672C;&#x5931;&#x8D25;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x5339;&#x914D;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x6709;3.1&#x548C;3.2&#x5927;&#x7248;&#x672C;&#x4E0D;&#x5339;&#x914D;&#x60C5;&#x51B5;
+     *          LK_VERSION_CHECK_FAILED                   : 301
+     *          // &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x521B;&#x5EFA;Task&#x5931;&#x8D25;
+     *          TASK_NOTFOUND-TASK_NO_GPU_RESOURCE        : 401-404
+     *          // &#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;&#x6D41;&#x5A92;&#x4F53;&#x5931;&#x8D25;
+     *          LK_START_STREAM_PROCESS_START-FAILED-LK_START_STREAM_ENCODER_ERROR : 501-504
+     *          // RTC &#x8FDE;&#x63A5;&#x5173;&#x95ED;
+     *          LK_RTC_EVENT_PEERCONNECTION_CLOSED        : 601
+     *          // RTC &#x8FDE;&#x63A5;&#x51FA;&#x9519;
+     *          LK_RTC_EVENT_PEERCONNECTION_ERROR         : 602
+     *          // RTC &#x521B;&#x5EFA;&#x51FA;&#x9519;&#xFF0C;&#x4E00;&#x822C;&#x4E3A; &#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301; webrtc
+     *          LK_RTC_EVENT_PEERCONNECTION_CREATE_FAILED : 603
+     *          // &#x670D;&#x52A1;&#x5668;&#x4E3B;&#x52A8;&#x8981;&#x6C42;&#x5BA2;&#x6237;&#x7AEF;&#x9000;&#x51FA;
+     *          LK_NOTIFY_CLIENT_LOGOUT_PLAYER_LOGOUT     : 800
+     *          // &#x4E00;&#x4EBA;&#x64CD;&#x4F5C;&#x591A;&#x4EBA;&#x770B;&#x623F;&#x4E3B;&#x9000;&#x51FA;
+     *          LK_NOTIFY_CLIENT_LOGOUT_TASKOWNER_LOGOUT  : 801
+     *
      */</span>
     ERROR = <span class="hljs-string">&quot;error&quot;</span>,
     <span class="hljs-comment">/**
@@ -736,7 +767,7 @@ declare <span class="hljs-keyword">const</span> enum LarkSRClientEvent {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6 事件","level":"2.1.5","depth":2,"next":{"title":"1.7 SDK 加密","level":"2.1.6","depth":2,"path":"webclient_sdk/sdkid_encryption.md","ref":"./webclient_sdk/sdkid_encryption.md","articles":[]},"previous":{"title":"1.5 变量","level":"2.1.4","depth":2,"path":"webclient_sdk/member_variables.md","ref":"./webclient_sdk/member_variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/events.md","mtime":"2022-09-09T08:03:26.490Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-13T09:14:10.609Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"1.6 事件","level":"2.1.5","depth":2,"next":{"title":"1.7 SDK 加密","level":"2.1.6","depth":2,"path":"webclient_sdk/sdkid_encryption.md","ref":"./webclient_sdk/sdkid_encryption.md","articles":[]},"previous":{"title":"1.5 变量","level":"2.1.4","depth":2,"path":"webclient_sdk/member_variables.md","ref":"./webclient_sdk/member_variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/events.md","mtime":"2022-10-11T08:54:50.387Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-10-11T09:12:32.715Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
