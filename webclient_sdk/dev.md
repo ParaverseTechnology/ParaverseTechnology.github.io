@@ -78,7 +78,7 @@ larksr.getMediaSharePeerConnection(0).forceRenderToCanvas = true;
 强制顺时针旋转
 
 ```javascript
-client.getMediaSharePeerConnection(0).canvasRender.setRotate(true);
+larksr.getMediaSharePeerConnection(0).canvasRender.setRotate(true);
 ```
 
 > 设置完成之后再次打开视频起效，已经打开的视频通不会有变化。
