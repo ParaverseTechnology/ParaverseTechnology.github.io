@@ -441,7 +441,14 @@ ERROR              = 'error',
 3. 添加 `closeMediaChannel` 关闭单独的媒体上传通道。仅当 useSeparateMediaSharePeer 为 true 时有效。
 4. `openVideo` 接口添加 `openVideo(audio?: boolean, cameraId?: string, width?: number, height?: number)`  宽高参数，限定打开摄像头设备的宽高
 
-## V3.2.336
+## V3.2.337
 
-1. 修复部分浏览器边缘可能出现缝隙的问题.
-2. 优化内部样式
+1. 配合服务端升级协议.
+2. 修复其他问题.
+
+## V3.3.342
+
+1. 配合服务端升级，添加 `larksr.serverFeatures` 返回服务端支持特性
+2. 移动端打开摄像头会根据屏幕旋转旋转摄像头画面方向
+3. `openVideo` 接口可以传参数指定是否是前置摄像头 `openVideo(audio: boolean = false, cameraId: string = '', width: number = 0, height: number = 0, front?: boolean)`
+4. 获取后台应用参数 `larksr.params.mobileKeyboardType`
