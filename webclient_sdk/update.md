@@ -452,3 +452,11 @@ ERROR              = 'error',
 2. 移动端打开摄像头会根据屏幕旋转旋转摄像头画面方向
 3. `openVideo` 接口可以传参数指定是否是前置摄像头 `openVideo(audio: boolean = false, cameraId: string = '', width: number = 0, height: number = 0, front?: boolean)`
 4. 获取后台应用参数 `larksr.params.mobileKeyboardType`
+
+## V3.2.343
+
+1. 添加配置项  `new LarkSR({ ... 此处省略其他配置 ... enableCanvasRender: false })` 开启或关闭 canvas 渲染模式。默认关闭。要注意移动端开启 canvas 会消耗额外性能。
+2. 优化显示效果。
+3. 优化显示宽高计算方式。
+
+> 已知问题: iOS 在关闭 canvas 模式下，忽略狂高比的拉伸模式无效。
