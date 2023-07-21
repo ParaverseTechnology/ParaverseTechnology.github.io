@@ -1,16 +1,14 @@
-# About
+# 简介
 
----
+[平行云](https://www.pingxingyun.com/) 提供实时云渲染标准产品和丰富的接入和二次开发方式。
 
-[English](./README.md) [中文](./README.zh_CN.md)
+本着开放，易用, 服务，扩展的基本原则，完善开放接口和接入SDK。
 
----
+尽可能开源不同场景下接入方式和工具链帮助开发者打造更完美的实时云渲染产品。
 
-[Paraverse](https://www.paraverse.cc/) We provide decentralized cloud rendering and Web3 transaction platform for XR & 3D assets.
+## 开源和接入组件一览
 
-## Demo and SDK List
-
-| Product | Platform | Resorce |
+| 产品 | 平台 | 资源 |
 | :-----| :----: | :----: |
 | Server Release | Win | [Releases](https://github.com/pingxingyun/LarkXR3.1/releases) |
 | WebClient SR SDK | Browser | [Demos](https://github.com/pingxingyun/lark_sr_websdk_demos) |
