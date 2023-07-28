@@ -1,0 +1,57 @@
+{
+    "title": "pingxingyun",
+    "author": "fcx@pingxingyun.com",
+    "description": "Pingxingyun larkxr cloud rendering and streaming product and SDK.",
+    "language": "zh-hans",
+    "gitbook": "3.2.3",
+    "styles": {
+    },
+    "structure": {
+        "readme": "README.zh_CN.md"
+    },
+    "links": {
+        "sidebar": {
+            "开发者中心": "https://www.pingxingyun.com/devCenter.html"
+        }
+    },
+    "plugins": [
+        "-sharing",
+        "splitter",
+        "expandable-chapters-small",
+        "anchors",
+
+        "github",
+        "sharing-plus",
+        "anchor-navigation-ex"
+    ],
+    "pluginsConfig": {
+        "github": {
+            "url": "https://pingxingyun.github.io"
+        },
+        "sharing": {
+            "douban": false,
+            "facebook": false,
+            "google": false,
+            "hatenaBookmark": false,
+            "instapaper": false,
+            "line": false,
+            "linkedin": false,
+            "messenger": false,
+            "pocket": false,
+            "qq": false,
+            "qzone": false,
+            "stumbleupon": false,
+            "twitter": false,
+            "viber": false,
+            "vk": false,
+            "weibo": false,
+            "whatsapp": false,
+            "all": [
+                "weibo", "linkedin"
+            ]
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false
+        }
+    }
+}

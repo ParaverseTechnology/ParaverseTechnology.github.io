@@ -11,7 +11,8 @@
     },
     "links": {
         "sidebar": {
-            "开发者中心": "https://www.pingxingyun.com/devCenter.html"
+            "中文": "/zh_CN/",
+            "English": "/en/"
         }
     },
     "plugins": [
