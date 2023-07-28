@@ -1,0 +1,776 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>3.1 Unity3D XR 客户端 SDK · pingxingyun</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="fcx@pingxingyun.com">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../androidclient_sr_sdk/" />
+    
+    
+    <link rel="prev" href="../nativeclient_xr_sdk/update.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="/zh_CN/" target="_blank" class="custom-link">中文</a>
+        </li>
+    
+        
+        <li>
+            <a href="/en/" target="_blank" class="custom-link">English</a>
+        </li>
+    
+        
+        <li>
+            <a href="https://www.pingxingyun.com/devCenter.html" target="_blank" class="custom-link">开发者中心</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../webclient_sdk/">
+            
+                <a href="../webclient_sdk/">
+            
+                    
+                    1.1 Web 客户端 SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../webclient_sdk/start.html">
+            
+                <a href="../webclient_sdk/start.html">
+            
+                    
+                    1.2 开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../webclient_sdk/config.html">
+            
+                <a href="../webclient_sdk/config.html">
+            
+                    
+                    1.3 配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../webclient_sdk/functions.html">
+            
+                <a href="../webclient_sdk/functions.html">
+            
+                    
+                    1.4 方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.4" data-path="../webclient_sdk/member_variables.html">
+            
+                <a href="../webclient_sdk/member_variables.html">
+            
+                    
+                    1.5 变量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.5" data-path="../webclient_sdk/events.html">
+            
+                <a href="../webclient_sdk/events.html">
+            
+                    
+                    1.6.1 事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.6" data-path="../webclient_sdk/event_codes.html">
+            
+                <a href="../webclient_sdk/event_codes.html">
+            
+                    
+                    1.6.2 事件状态码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.7" data-path="../webclient_sdk/sdkid_encryption.html">
+            
+                <a href="../webclient_sdk/sdkid_encryption.html">
+            
+                    
+                    1.7 SDK 加密
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.8" data-path="../webclient_sdk/update.html">
+            
+                <a href="../webclient_sdk/update.html">
+            
+                    
+                    1.8 更新
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.9" data-path="../webclient_sdk/dev.html">
+            
+                <a href="../webclient_sdk/dev.html">
+            
+                    
+                    1.9 调试分支
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../nativeclient_xr_sdk/">
+            
+                <a href="../nativeclient_xr_sdk/">
+            
+                    
+                    2.1 原生 Android XR 客户端 SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1.1" data-path="../nativeclient_xr_sdk/update.html">
+            
+                <a href="../nativeclient_xr_sdk/update.html">
+            
+                    
+                    2.2 更新说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    3.1 Unity3D XR 客户端 SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../androidclient_sr_sdk/">
+            
+                <a href="../androidclient_sr_sdk/">
+            
+                    
+                    4.1 Android SR 客户端 SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../androidclient_sr_sdk/update.html">
+            
+                <a href="../androidclient_sr_sdk/update.html">
+            
+                    
+                    4.2 更新说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="../datachannel/">
+            
+                <a href="../datachannel/">
+            
+                    
+                    5.1 数据通道Unity插件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1.1" data-path="../datachannel/ue4_datachannel_blueprint.html">
+            
+                <a href="../datachannel/ue4_datachannel_blueprint.html">
+            
+                    
+                    5.2 在 UE4 中使用 DataChannel 中附带 Demo Plugin
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="divider"></li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="../cloudapp/ue4_mouse_mode.html">
+            
+                <a href="../cloudapp/ue4_mouse_mode.html">
+            
+                    
+                    6.1 云端应用开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="../nativeclient_ar_sdk/">
+            
+                <a href="../nativeclient_ar_sdk/">
+            
+                    
+                    7.1 LarkXR-AR 接入和 Demo
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.2.1" data-path="../nativeclient_ar_sdk/client_android/">
+            
+                <a href="../nativeclient_ar_sdk/client_android/">
+            
+                    
+                    7.2 Android 客户端开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.2" data-path="../nativeclient_ar_sdk/cloudapp_unity/">
+            
+                <a href="../nativeclient_ar_sdk/cloudapp_unity/">
+            
+                    
+                    7.3 云端应用-Unity3D
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.3" data-path="../nativeclient_ar_sdk/cloudapp_unreal/">
+            
+                <a href="../nativeclient_ar_sdk/cloudapp_unreal/">
+            
+                    
+                    7.4 云端应用-Unreal
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2.4" data-path="../nativeclient_ar_sdk/cloudapp_cloudxr/">
+            
+                <a href="../nativeclient_ar_sdk/cloudapp_cloudxr/">
+            
+                    
+                    7.5 云端应用-CloudXR 适配要求
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >3.1 Unity3D XR 客户端 SDK</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#larkxr-unity3d-client-sdk"><b></b>LarkXR Unity3D Client SDK</a></li><ul><li><span class="title-icon "></span><a href="#&#x7B80;&#x4ECB;"><b></b>&#x7B80;&#x4ECB;</a></li><ul><li><span class="title-icon "></span><a href="#&#x652F;&#x6301;&#x5E73;&#x53F0;"><b></b>&#x652F;&#x6301;&#x5E73;&#x53F0;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;"><b></b>&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;</a></li><li><span class="title-icon "></span><a href="#&#x5FEB;&#x901F;&#x5F00;&#x59CB;"><b></b>&#x5FEB;&#x901F;&#x5F00;&#x59CB;</a></li><li><span class="title-icon "></span><a href="#&#x63A5;&#x53E3;"><b></b>&#x63A5;&#x53E3;</a></li><ul><li><span class="title-icon "></span><a href="#xrmanager"><b></b>XRManager</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7406;"><b></b>&#x4EE3;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;"><b></b>&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;</a></li><li><span class="title-icon "></span><a href="#&#x8BBE;&#x7F6E;&#x9879;"><b></b>&#x8BBE;&#x7F6E;&#x9879;</a></li><li><span class="title-icon "></span><a href="#&#x540E;&#x53F0;&#x63A5;&#x53E3;"><b></b>&#x540E;&#x53F0;&#x63A5;&#x53E3;</a></li></ul></ul></ul></div><a href="#larkxr-unity3d-client-sdk" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="larkxr-unity3d-client-sdk"><a name="larkxr-unity3d-client-sdk" class="anchor-navigation-ex-anchor" href="#larkxr-unity3d-client-sdk"><i class="fa fa-link" aria-hidden="true"></i></a><a name="larkxr-unity3d-client-sdk" class="plugin-anchor" href="#larkxr-unity3d-client-sdk"><i class="fa fa-link" aria-hidden="true"></i></a>LarkXR Unity3D Client SDK</h1>
+<h2 id="&#x7B80;&#x4ECB;"><a name="&#x7B80;&#x4ECB;" class="anchor-navigation-ex-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7B80;&#x4ECB;" class="plugin-anchor" href="#&#x7B80;&#x4ECB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7B80;&#x4ECB;</h2>
+<p>SDK &#x9002;&#x7528;&#x4E0E;&#x5F00;&#x53D1;&#x63A5;&#x5165; LarkXR &#x4E91;&#x6E32;&#x67D3;&#x7684; Unity3D &#x5BA2;&#x6237;&#x7AEF;&#x3002;&#x53EF;&#x7528;&#x4E8E;&#x63A5;&#x5165;&#x4E0D;&#x540C;&#x7684; XR &#x8BBE;&#x5907;&#x5982; VR &#x5934;&#x663E;&#xFF0C;Zspace&#xFF0C;&#x624B;&#x673A; AR&#xFF0C;AR &#x5934;&#x76D4;&#x7B49;&#x3002;</p>
+<p>&#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x4F7F;&#x7528; OpenVR/OpenXR &#x5F00;&#x53D1;&#x3002;</p>
+<p>SDK &#x5C01;&#x88C5; LarkXR &#x7CFB;&#x7EDF;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x548C;&#x6D41;&#x5A92;&#x4F53;&#x4EA4;&#x4E92;&#x80FD;&#x529B;&#x3002;&#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#xFF0C;&#x540E;&#x53F0;&#x4E0A;&#x4E0B;&#x7EBF;&#x7B49;&#x3002;</p>
+<p>SDK &#x8F93;&#x51FA;&#x4E91;&#x7AEF;&#x6E32;&#x67D3;&#x597D;&#x7684;&#x5DE6;&#x53F3;&#x773C;&#x7EB9;&#x7406;&#xFF0C;&#x5E94;&#x7528;&#x5E94;&#x8BE5;&#x7ED9; SDK &#x63D0;&#x4F9B;&#x6700;&#x65B0;&#x7684;&#x59FF;&#x6001;&#x4FE1;&#x606F;&#x548C;&#x624B;&#x67C4;&#x7B49;&#x63A7;&#x5236;&#x4FE1;&#x606F;&#x3002;</p>
+<h3 id="&#x652F;&#x6301;&#x5E73;&#x53F0;"><a name="&#x652F;&#x6301;&#x5E73;&#x53F0;" class="anchor-navigation-ex-anchor" href="#&#x652F;&#x6301;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x652F;&#x6301;&#x5E73;&#x53F0;" class="plugin-anchor" href="#&#x652F;&#x6301;&#x5E73;&#x53F0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x652F;&#x6301;&#x5E73;&#x53F0;</h3>
+<ul>
+<li>[:heavy_check_mark:] Windows X64</li>
+<li>[:heavy_check_mark:] Android Phone</li>
+<li>[:heavy_check_mark:] <a href="https://zspace.com/" target="_blank">Zspace (Win64)</a></li>
+<li>[Doing] Holoens</li>
+</ul>
+<p>&#x53C2;&#x8003;&#x8FDE;&#x63A5;&#xFF1A;</p>
+<p><a href="https://www.pingxingyun.com/index.html" target="_blank">&#x5E73;&#x884C;&#x4E91;&#x4EA7;&#x54C1;&#x4ECB;&#x7ECD;</a></p>
+<p><a href="https://pingxingyun.github.io/" target="_blank">LarkXR &#x63A5;&#x5165;&#x4ECB;&#x7ECD;</a></p>
+<p><a href="https://www.pingxingyun.com/devCenter.html" target="_blank">LarkXR &#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#x548C;&#x6587;&#x6863;</a></p>
+<p><a href="https://www.pingxingyun.com/experience/experience.html" target="_blank">&#x5373;&#x523B;&#x4F53;&#x9A8C;</a></p>
+<h2 id="&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;"><a name="&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;" class="anchor-navigation-ex-anchor" href="#&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;" class="plugin-anchor" href="#&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E91;&#x6E32;&#x67D3;&#x6548;&#x679C;</h2>
+<p><img src="doc/cloudrender.png" alt=""></p>
+<h2 id="&#x5FEB;&#x901F;&#x5F00;&#x59CB;"><a name="&#x5FEB;&#x901F;&#x5F00;&#x59CB;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x901F;&#x5F00;&#x59CB;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5FEB;&#x901F;&#x5F00;&#x59CB;" class="plugin-anchor" href="#&#x5FEB;&#x901F;&#x5F00;&#x59CB;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5FEB;&#x901F;&#x5F00;&#x59CB;</h2>
+<ol>
+<li>&#x5BFC;&#x5165; LarkXR SDK &#x81EA;&#x5B9A;&#x4E49;&#x5305;</li>
+</ol>
+<p><img src="doc/import.png" alt="">
+<img src="doc/package.png" alt=""></p>
+<ol>
+<li>&#x6253;&#x5F00; DemoScene</li>
+</ol>
+<p><img src="doc/demoscene.png" alt=""></p>
+<ol>
+<li>&#x586B;&#x5165; SDK ID</li>
+</ol>
+<p>&#x6253;&#x5F00; DemoRender.cs, &#x4FEE;&#x6539;&#x7B2C; 38 &#x884C;&#x3002;</p>
+<pre><code class="lang-c#">// &#x521D;&#x59CB;&#x5316; SDK ID 
+string sdkID = &quot;&#x4F60;&#x7684;SDKID&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;SDKID&#x8BF7;&#x8054;&#x7CFB;&#x5546;&#x52A1;&#x83B7;&#x53D6;&quot;;
+
+if (!XRApi.InitSdkAuthorization(sdkID)) {
+    int errCode = XRApi.GetLastError();
+    Debug.LogError(&quot;&#x521D;&#x59CB;&#x5316;&#x4E91;&#x96C0;SDK ID &#x5931;&#x8D25; code &quot; + errCode);
+}
+</code></pre>
+<ol>
+<li>&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#xFF0C;&#x586B;&#x5165; LarkXR &#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;&#x3002;</li>
+</ol>
+<p><img src="doc/setip.png" alt=""></p>
+<p>&#x586B;&#x5165; IP &#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x6B63;&#x5E38;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x4E91;&#x6E32;&#x67D3;&#x7684;&#x6548;&#x679C;&#x3002;</p>
+<h2 id="&#x63A5;&#x53E3;"><a name="&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x63A5;&#x53E3;" class="plugin-anchor" href="#&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53E3;</h2>
+<h3 id="xrmanager"><a name="xrmanager" class="anchor-navigation-ex-anchor" href="#xrmanager"><i class="fa fa-link" aria-hidden="true"></i></a><a name="xrmanager" class="plugin-anchor" href="#xrmanager"><i class="fa fa-link" aria-hidden="true"></i></a>XRManager</h3>
+<p>&#x624B;&#x52A8;&#x6302;&#x8F7D; XRManager &#x811A;&#x672C;&#x6216;&#x8005;&#x8C03;&#x7528; XRManager.Instance &#x5373;&#x53EF;&#x83B7;&#x53D6;&#x5230; XRManager &#x5355;&#x4F8B;&#x3002;</p>
+<p>XRManager &#x5C06;&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
+<blockquote>
+<p>&#x8981;&#x6CE8;&#x610F;&#x5148;&#x8BBE;&#x7F6E; SDK ID</p>
+</blockquote>
+<pre><code class="lang-c#">// &#x521D;&#x59CB;&#x5316; SDK ID 
+string sdkID = &quot;&#x4F60;&#x7684;SDKID&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;SDKID&#x8BF7;&#x8054;&#x7CFB;&#x5546;&#x52A1;&#x83B7;&#x53D6;&quot;;
+
+if (!XRApi.InitSdkAuthorization(sdkID)) {
+    int errCode = XRApi.GetLastError();
+    Debug.LogError(&quot;&#x521D;&#x59CB;&#x5316;&#x4E91;&#x96C0;SDK ID &#x5931;&#x8D25; code &quot; + errCode);
+}
+</code></pre>
+<h3 id="&#x4EE3;&#x7406;"><a name="&#x4EE3;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4EE3;&#x7406;" class="plugin-anchor" href="#&#x4EE3;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7406;</h3>
+<p>&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x53EF;&#x83B7;&#x53D6;&#x5230;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x5173;&#x95ED;&#xFF0C;&#x7EB9;&#x7406;&#x7B49;</p>
+<p>onTexture2D,onTexture2DStereo &#x83B7;&#x53D6;&#x5230;&#x4E91;&#x7AEF;&#x6E32;&#x67D3;&#x7684;&#x7EB9;&#x7406;&#xFF0C;&#x5206;&#x5DE6;&#x773C;&#x548C;&#x53F3;&#x773C;&#x3002;&#x8981;&#x6839;&#x636E;&#x8BBE;&#x5907;&#x548C;&#x5E73;&#x53F0;&#x7684;&#x5177;&#x4F53;&#x8981;&#x6C42;&#x6B63;&#x786E;&#x663E;&#x793A;&#x5DE6;&#x53F3;&#x773C;&#x7684;&#x7EB9;&#x7406;&#x3002;</p>
+<pre><code class="lang-c#">// &#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x5173;&#x95ED;
+XRManager.Instance.RenderManger.onClose += OnClose;
+// &#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x6210;&#x529F;
+XRManager.Instance.RenderManger.onConnected += OnConnect;
+// &#x83B7;&#x53D6;&#x5230;&#x5DE6;&#x53F3;&#x773C;&#x7EB9;&#x7406;
+XRManager.Instance.RenderManger.onTexture2DStereo += OnTexture2DStrereo;
+// &#x83B7;&#x53D6;&#x5230;&#x5DE6;&#x53F3;&#x773C;&#x7EB9;&#x7406;,&#x6CE8;&#x610F;&#x5DE6;&#x53F3;&#x773C;&#x62FC;&#x63A5;&#x5230;&#x540C;&#x4E00;&#x5F20;&#x7EB9;&#x7406;&#x4E0A;&#x3002;
+XRManager.Instance.RenderManger.onTexture2D += OnTexture2D;
+</code></pre>
+<h3 id="&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;"><a name="&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;" class="anchor-navigation-ex-anchor" href="#&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;" class="plugin-anchor" href="#&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;</h3>
+<p>&#x901A;&#x8FC7; XRApi.UpdateDevicePose &#x66F4;&#x65B0;&#x59FF;&#x6001;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x8C03;&#x7528; XRApi.SendDeivcePair &#x8868;&#x793A;&#x66F4;&#x65B0;&#x5B8C;&#x6210;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x7ED9;&#x4E91;&#x7AEF;&#x3002;</p>
+<p>&#x5728;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x4E4B;&#x540E;&#x5C31;&#x8981;&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x6C92;&#x6709;&#x59FF;&#x6001;&#x4FE1;&#x606F;&#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x5C06;&#x6C92;&#x6709;&#x8F93;&#x51FA;.</p>
+<pre><code class="lang-c#">void Update()
+{
+    UpdateCamera();
+    // &#x6BCF;&#x5E27;&#x53D1;&#x9001;&#x59FF;&#x6001;&#x4FE1;&#x606F;
+    if (XRApi.IsConnected())
+    {
+        UpdateCloudPose();
+    }
+}
+</code></pre>
+<pre><code class="lang-c#">OpenVrPose openVrPose = new OpenVrPose(hmd.transform);
+openVrPose.Position.y += LarkXR.Config.GetExtraHeight();
+XRApi.UpdateDevicePose(XRApi.DeviceType.Device_Type_HMD, openVrPose.Position, openVrPose.Rotation);
+XRApi.SendDeivcePair();
+</code></pre>
+<blockquote>
+<p>&#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x5750;&#x6807;&#x7CFB;&#x4E0E; OpenVr &#x5750;&#x6807;&#x7CFB;&#x76F8;&#x540C;&#xFF0C;&#x9700;&#x8981;&#x5C06; Unity3D &#x5750;&#x6807;&#x7CFB;&#x8F6C;&#x6362;&#x4E3A; OpenVr &#x5750;&#x6807;&#x7CFB;&#x3002;&#x53C2;&#x8003; OpenVrPose</p>
+</blockquote>
+<h3 id="&#x8BBE;&#x7F6E;&#x9879;"><a name="&#x8BBE;&#x7F6E;&#x9879;" class="anchor-navigation-ex-anchor" href="#&#x8BBE;&#x7F6E;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8BBE;&#x7F6E;&#x9879;" class="plugin-anchor" href="#&#x8BBE;&#x7F6E;&#x9879;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8BBE;&#x7F6E;&#x9879;</h3>
+<pre><code class="lang-c#">// config render.
+// &#x57FA;&#x672C;&#x6E32;&#x67D3;&#x8BBE;&#x7F6E;
+XRApi.RenderInfo renderInfo = XRApi.GetDefaultRenderInfo();
+renderInfo.renderWidth = 1920;
+renderInfo.renderHeight = 1080;
+renderInfo.fps = 60;
+XRApi.SetRenderInfo(renderInfo);
+
+// &#x8BBE;&#x7F6E;&#x7801;&#x7387;
+XRApi.SetupBitrateKbps(50 * 1000);
+
+// &#x662F;&#x5426;&#x8F93;&#x51FA;&#x5DE6;&#x53F3;&#x773C;&#x662F;&#x5426;&#x5728;&#x540C;&#x4E00;&#x5F20;&#x7EB9;&#x7406;&#x4E0A;&#x9762;
+XRApi.SetUseMultiview(true);
+</code></pre>
+<p>&#x8BBE;&#x7F6E; IP</p>
+<pre><code class="lang-c#">// update android server address;
+XRApi.SetServerAddr(Config.GetServerIp(), Config.GetLarkPort());
+</code></pre>
+<blockquote>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x8BBE;&#x7F6E;&#x76F8;&#x5173;&#x53C2;&#x8003; LarkXR/Scripts/UI/UIManager.cs</p>
+</blockquote>
+<h3 id="&#x540E;&#x53F0;&#x63A5;&#x53E3;"><a name="&#x540E;&#x53F0;&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#&#x540E;&#x53F0;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x540E;&#x53F0;&#x63A5;&#x53E3;" class="plugin-anchor" href="#&#x540E;&#x53F0;&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540E;&#x53F0;&#x63A5;&#x53E3;</h3>
+<p>XRManager &#x5C06;&#x81EA;&#x52A8;&#x5F00;&#x542F;&#x540E;&#x53F0;&#x63A5;&#x53E3;&#x8BF7;&#x6C42; task&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x83B7;&#x53D6;&#x5230;&#x7ED3;&#x679C;</p>
+<pre><code class="lang-c#">// &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x6210;&#x529F;
+XRManager.Instance.TaskManager.onApplistSuccess += OnApplistSuccess;
+// &#x83B7;&#x53D6;&#x5E94;&#x7528;&#x5217;&#x8868;&#x5931;&#x8D25;
+XRManager.Instance.TaskManager.onApplistFailed += OnApplistFailed;
+</code></pre>
+<blockquote>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x63A5;&#x53E3;&#x76F8;&#x5173;&#x53C2;&#x8003; LarkXR/Scripts/UI/UIManager.cs</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../nativeclient_xr_sdk/update.html" class="navigation navigation-prev " aria-label="Previous page: 2.2 更新说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../androidclient_sr_sdk/" class="navigation navigation-next " aria-label="Next page: 4.1 Android SR 客户端 SDK">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"3.1 Unity3D XR 客户端 SDK","level":"4.1","depth":1,"next":{"title":"4.1 Android SR 客户端 SDK","level":"5.1","depth":1,"path":"androidclient_sr_sdk/README.md","ref":"./androidclient_sr_sdk/README.md","articles":[{"title":"4.2 更新说明","level":"5.1.1","depth":2,"path":"androidclient_sr_sdk/update.md","ref":"./androidclient_sr_sdk/update.md","articles":[]}]},"previous":{"title":"2.2 更新说明","level":"3.1.1","depth":2,"path":"nativeclient_xr_sdk/update.md","ref":"./nativeclient_xr_sdk/update.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.zh_CN.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"unity3d_client_xr_sdk/README.md","mtime":"2023-05-26T06:38:28.870Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-07-28T07:46:07.648Z"},"basePath":"..","book":{"language":"zh_CN"}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
