@@ -1,77 +1,115 @@
-#
+# LarkSR WebClient SDK
 
-## 安装
+Develop webclient for LarkSR cloudrending or LarkSR VR monitor client. Free design UI and define operate.
 
-1. npm 方式
+Links：
+
+[Paraverse](https://www.paraverse.cc/)
+
+[LarkSR Doc](https://www.pingxingyun.com/devCenter.html)
+
+[Experience](https://www.paraverse.cc/)
+
+SDK include:
+
+* LarkSR restful request.
+* CloudRending Video.
+* Handle input, keyboard, gamepad, touchscreen.
+* Scale mode.
+* Fullscreen mode.
+* Landscap mode.
+
+### Notice
+
+> SDK V3.2.30 only support server version above [V3.2.3.1](https://www.pingxingyun.com/devCenter.html)
+> [Old verion SDK Demo](https://github.com/pingxingyun/lark_sr_websdk_demos/releases/tag/V3.2.10)
+> V3.2.314 server and datachannel above 3.2.5.1
+
+## Quick Start
+
+### install
+
+1. npm
 
 ```cmd
 npm i larksr_websdk
 ```
 
-2. 直接引入
+2. plain html
 
 ```html
 <script src="larksr-web-sdk.min.js"></script>
 ```
 
-> 直接引入模式下 SDK 挂载为全局对象 larksr_websdk。
+### Use
 
-## 使用
+Import websdk with plain html SDK under global object larksr_websdk.
 
-## 创建 LarkSR 实例
+Connect cloud resource and all event access with new LarkSR object.
 
-```typescript
-/**
-* LarkSR 客户端。所有操作和事件通过该类传递
-* @param config 本地配置, 优先级最高
-*/
-constructor(config: ILarkSRConfig);
-```
+> SDK default config html 100% height 100% width viewport. Auto handle input.
 
-example:
+> SDK mainly contain loading page and cloud video page no other ui.efore start:
 
-```js
+1. Lark SR server address, exp：http://222.128.6.137:8181/
+2. SDK auth code，connect business@pingxingyun.com or register https://www.pingxingyun.com/console/#/
+3. App id from Lark SR admin server applist.
+
+```javascript
 var client = new LarkSR({ 
-    // 设置挂载显示的元素
-    // 注意*不要*设置为 document.documentElement
+    // root html element
+    // WARNING not document.documentElement
     rootElement: document.getElementById('container'),
-    // 服务器地址,实际使用中填写您的服务器地址
-    // 如：http://222.128.6.137:8181/
-    // 当使用平行云托管服务时服务器地址自动分配,可留空。
-    // larksr.connectWithPxyHost 进入应用
-    serverAddress: "Lark 服务器前台地址",
-    // SDK ID 也可在 initSDKAuthCode 设置
-    authCode: '您的 SDK ID',
-    // 测试载入背景图
+    // Sever address
+    serverAddress: "Lark Sever address",
+    // SDK ID or set by call initSDKAuthCode
+    // authCode: 'your SDK ID',
+    // test backgroud url
     // loadingBgUrl: 'https://home-obs.pingxingyun.com/homePage_4_0/bg.jpg',
 });
+```
 
-// start connect;
-// 使用平行云托管服务时，用 connectWithPxyHost 进入应用并自动分配服务器.
-client.connect({
-    // 要使用的云端资源的应用 ID，从后云雀后台接口获取
-    // 参考查询应用一栏文档
-    // https://www.pingxingyun.com/online/api3_2.html?id=476
-    // 如 222.128.6.137:8181 系统下的 879408743551336448 应用
-    appliId: "应用ID"
-})
+Set sdk auth code.
+
+```javascript
+client.initSDKAuthCode('Your SDK ID')
 .then(() => {
-    console.log('enter success');
+    // start connect;
+    client.connect({
+        // LarkSR cloud appid from LarkSR admin server.
+        // doc
+        // https://www.pingxingyun.com/online/api3_2.html?id=476
+        appliId: "appid from LarkSR admin"
+    })
+    .then(() => {
+        console.log('enter success');
+    })
+    .catch((e) => {
+        console.error(e);
+    }); 
 })
 .catch((e) => {
     console.error(e);
-}); 
+});
 // ...
-// 主动关闭并清理资源
+// close connection.
 // client.close();
+// release DOM element.
+// client.destroy();
 ```
 
-## 文档目录
+### Doc
 
-### [参数配置](./config.md)
-### [LarkSR 对象方法](./functions.md)
-### [LarkSR 事件](./events.md)
-### [LarkSR 事件状态码](./event_codes.md)
-### [LarkSR 对象成员](./member_variables.md)
-### [SDK ID 加密](./sdkid_encryption.md)
-### [SDK 更新](./update.md)
+[LarkSR WebClient SDK](https://pingxingyun.github.io/en/webclient_sdk/)
+
+
+## Index
+
+### [Config](./config.md)
+### [LarkSR functions](./functions.md)
+### [LarkSR events](./events.md)
+### [LarkSR event codes](./event_codes.md)
+### [LarkSR member varibales](./member_variables.md)
+### [SDK ID encryption](./sdkid_encryption.md)
+### [Multi media share](./multi_media_3_2_401.md)
+### [SDK Update](./update.md)
