@@ -81,7 +81,7 @@ export default class App extends React.Component {
             <div>
                 // ...
                 // 省略其他元素
-                <div style={ {
+                <div style={{
                         zIndex: 1000,
                         position: 'absolute', 
                         left: this.state.pointPosition.x, 
@@ -90,17 +90,17 @@ export default class App extends React.Component {
                         width: 50,
                         height: 50,
                         borderRadius: "50%"
-                    } }>
+                    }}>
                 </div>
-                <button style={ {pointerEvents: "all"} } 
-                    onClick={ () => {
+                <button style={{pointerEvents: "all"}} 
+                    onClick={()=>{
                         // 获取虚拟鼠标的位置
                         console.log("touch point", this.larksr.virtualCursorPosition);
                         // 同步虚拟鼠标的位置
                         this.setState({
                             pointPosition: this.larksr.virtualCursorPosition,
                         })
-                    } }
+                    }}
                     >
                     touchPoint
                 </button>
@@ -404,4 +404,28 @@ larksr.fullScreen.exitFullscreen();
 larksr.lockPointer.lockPointer();
 // 释放鼠标
 larksr.lockPointer.exitPointerLock();
+```
+
+## 其他状态
+
+```typescript
+/**
+ * 当前云端应用窗口大小
+ */
+larksr.currentAppSize;
+
+/**
+ * 同步客户端视口大小状态
+ */
+larksr.syncClientViewport;
+
+/**
+ * 服务端支持功能列表
+ */
+larksr.serverFeatures;
+
+/**
+ * 服务端状态：编码延时，渲染延时等
+ */
+larksr.serverStatics;
 ```

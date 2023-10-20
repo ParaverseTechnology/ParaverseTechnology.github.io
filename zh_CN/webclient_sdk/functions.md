@@ -27,7 +27,8 @@ connectWithPxyHost(params: {
     appliId: string;
     playerMode?: number;
     userType?: number;
-    roomCode?: string;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
     taskId?: string;
     regionId?: string;
     groupId?: string;
@@ -65,7 +66,8 @@ connect(params: {
     appliId: string;
     playerMode?: number;
     userType?: number;
-    roomCode?: string;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
     taskId?: string;
     clientMac?: string;
     groupId?: string;
@@ -403,6 +405,23 @@ larksr 配置项自动打开麦克风配置,在`new LarkSR({ ... 此处省略其
 audioInputAutoStart?: boolean;
 ```
 
+获取当前打开音频设备的状态, 如 `larksr.audioPaused`
+
+```javascript
+/**
+ * 当前打开的音频设备 ID，如果打开时没指定为空
+ */
+get audioDeviceId(): string | null | undefined;
+/**
+ * 当前打开音频的track对象，未打开状态为空
+ */
+get audioTrack(): MediaStreamTrack | null | undefined;
+/**
+ * 音频通道是否暂停
+ */
+get audioPaused(): boolean | undefined;
+```
+
 ## 视频输入接口
 
 客户端打开后云端应用可直接通过读取服务端的摄像头读取视频数据。
@@ -493,6 +512,23 @@ larksr 配置项自动打开视频输入配置,在`new LarkSR({ ... 此处省略
 videoInputAutoStart?: boolean;
 ```
 
+获取当前打开视频设备的状态,如 `larksr.videoPaused`
+
+```javascript
+/**
+ * 当前打开视频设备 ID，如果打开时没指定特设备id为空
+ */
+get videoDeviceId(): string | null | undefined;
+/**
+ * 当前打开视频track对象，未打开状态为空
+ */
+get videoTrack(): MediaStreamTrack | null | undefined;
+/**
+ * 视频通道是否暂停
+ */
+get videoPaused(): boolean | undefined;
+```
+
 ## 云端直播推流功能
 
 > 服务端 3.2.7.0 添加， 要注意使用云端直播推流功能要在后台应用管理中开启该功能
@@ -542,6 +578,59 @@ RTMP_STREAM_STATE = "rtmpstreamstate",
 * rtmp 直播推流出错
 */
 RTMP_STREAM_ERROR = "rtmpstreamerror"
+```
+
+## 鸟瞰模式
+
+```typescript
+/**
+ * 开始鸟瞰模式
+ */
+startAerialview(viewbox: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}, interval: number | undefined, thumbnailWidth: 120, thumbnailHeight: 120): void;
+/**
+ * 更新鸟瞰模式区域
+ */
+updateAerialview(viewbox: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}): void;
+/**
+ * 停止鸟瞰模式区域
+ */
+stopAerialview(): void;
+```
+
+## 调整参数
+
+```typescript
+/**
+ * 动态设置码率 单位 kbps
+ * @param bitrateKbps
+ */
+setVideoBitrateKbps(bitrateKbps: number): void;
+/**
+ * 动态设置帧率
+ */
+setVideoFps(fps: number): void;
+/**
+ * 动态设置云端 debug 窗口
+ */
+setCloudDebugLayout(open: boolean): void;
+/**
+ * 重启云端应用
+ */
+restartCloudApp(): void;
+/**
+ * 设置云端应用大小
+ */
+setCloudAppSize(width: number, height: number): void;
 ```
 
 ## 其他

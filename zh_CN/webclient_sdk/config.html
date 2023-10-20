@@ -774,9 +774,24 @@
     <span class="hljs-comment">/**
      * &#x662F;&#x5426;&#x542F;&#x7528; canvas &#x6E32;&#x67D3;. &#x9ED8;&#x8BA4;&#x5173;&#x95ED;
      * &#x8981;&#x6CE8;&#x610F;&#x79FB;&#x52A8;&#x7AEF;&#x5F00;&#x542F; canvas &#x4F1A;&#x6D88;&#x8017;&#x989D;&#x5916;&#x6027;&#x80FD;&#x3002;
-     * &#x5DF2;&#x77E5;&#x95EE;&#x9898;: iOS &#x5728;&#x5173;&#x95ED; canvas &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5FFD;&#x7565;&#x72C2;&#x9AD8;&#x6BD4;&#x7684;&#x62C9;&#x4F38;&#x6A21;&#x5F0F;&#x65E0;&#x6548;&#x3002;
+     * &#x5DF2;&#x77E5;&#x95EE;&#x9898;: iOS &#x5728;&#x5173;&#x95ED; canvas &#x6A21;&#x5F0F;&#x4E0B;&#xFF0C;&#x5FFD;&#x7565;&#x72C2;&#x9AD8;&#x6BD4;&#x7684;&#x62C9;&#x4F38;&#x6A21;&#x5F0F;&#x65E0;&#x6548;&#x3002;&#x63A8;&#x8350;&#x4F7F;&#x7528; initResolutionType&#xFF0C;&#x9002;&#x5E94;&#x5BA2;&#x6237;&#x7AEF;&#x7A97;&#x53E3;&#x5206;&#x8FA8;&#x7387;
     */</span>
     enableCanvasRender?: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-comment">/**
+     * &#x5F3A;&#x5236;&#x4F7F;&#x7528;canvs2d&#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F18;&#x5148;&#x4F7F;&#x7528; webgl
+     */</span>
+    forceCanvas2d?: <span class="hljs-built_in">boolean</span>;
+    <span class="hljs-comment">/**
+     * &#x53EF;&#x9009;&#x9879;
+     * loading&#x9875;&#x8F7D;&#x5165;Logo&#x7248;&#x672C;
+     */</span>
+    loadingLogoVersion?: <span class="hljs-built_in">string</span>;
+    <span class="hljs-comment">/**
+     * &#x521D;&#x59CB;&#x5316;&#x5206;&#x8FA8;&#x7387;&#x65B9;&#x5F0F;
+     * 1:&#x9002;&#x5E94;&#x5BA2;&#x6237;&#x7AEF;&#x7A97;&#x53E3;&#x3011;&#x548C;&#x3010;0:&#x5E94;&#x7528;&#x9ED8;&#x8BA4;&#x5206;&#x8FA8;&#x7387;&#x3011;,&#x9ED8;&#x8BA4;&#x503C;&#xFF1A;0
+     * &#x6B64;&#x5904;&#x914D;&#x7F6E;&#x4F18;&#x5148;&#x7EA7;&#x5927;&#x4E8E;&#x7BA1;&#x7406;&#x540E;&#x53F0;&#x914D;&#x7F6E;
+     */</span>
+    initResolutionType?: <span class="hljs-built_in">number</span>;
 }
 </code></pre>
 
@@ -822,7 +837,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.3 配置","level":"2.1.2","depth":2,"next":{"title":"1.4 方法","level":"2.1.3","depth":2,"path":"webclient_sdk/functions.md","ref":"./webclient_sdk/functions.md","articles":[]},"previous":{"title":"1.2 开始","level":"2.1.1","depth":2,"path":"webclient_sdk/start.md","ref":"./webclient_sdk/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"livereload":{},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.zh_CN.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/config.md","mtime":"2023-07-31T07:45:44.358Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-09-06T06:42:45.093Z"},"basePath":"..","book":{"language":"zh_CN"}});
+            gitbook.page.hasChanged({"page":{"title":"1.3 配置","level":"2.1.2","depth":2,"next":{"title":"1.4 方法","level":"2.1.3","depth":2,"path":"webclient_sdk/functions.md","ref":"./webclient_sdk/functions.md","articles":[]},"previous":{"title":"1.2 开始","level":"2.1.1","depth":2,"path":"webclient_sdk/start.md","ref":"./webclient_sdk/start.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.zh_CN.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"zh-hans","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","开发者中心":"https://www.pingxingyun.com/devCenter.html"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/config.md","mtime":"2023-10-20T08:21:12.649Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-10-20T08:24:39.566Z"},"basePath":"..","book":{"language":"zh_CN"}});
         });
     </script>
 </div>
@@ -845,10 +860,6 @@
     
         
         <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
         
     
         
