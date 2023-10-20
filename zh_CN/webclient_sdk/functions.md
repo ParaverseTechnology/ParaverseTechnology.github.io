@@ -27,7 +27,8 @@ connectWithPxyHost(params: {
     appliId: string;
     playerMode?: number;
     userType?: number;
-    roomCode?: string;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
     taskId?: string;
     regionId?: string;
     groupId?: string;
@@ -65,7 +66,8 @@ connect(params: {
     appliId: string;
     playerMode?: number;
     userType?: number;
-    roomCode?: string;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
     taskId?: string;
     clientMac?: string;
     groupId?: string;
