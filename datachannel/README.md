@@ -1,8 +1,6 @@
 # 使用预发布的 Lark Plugin 接入
 
-Download: 
-[main lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/datachannel/tree/main/doc/unity)
-[releases](https://github.com/pingxingyun/datachannel/releases/tag/3.2.8.1)
+插件版本：[lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/lark_xr_unity3d_demos/releases/tag/3.2.1.0)
 
 插件发布环境 Unity3D 2019.4.41f1 windows 版
 
@@ -18,7 +16,7 @@ Download:
 
 ![import](./doc-assets/import_1.jpg)
 
-* 找到 [lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/datachannel/tree/main/doc/unity) 文件存放位置并打开
+* 找到 [lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/lark_xr_unity3d_demos/releases/tag/3.2.1.0) 文件存放位置并打开
 
 ![import](./doc-assets/import_2.png)
 
