@@ -6,21 +6,68 @@ LarkSR 对象成员方法主要分为以下三类
 
 ```typescript
 /**
+* 单独设置服务器地址，作用同 config 中的 serverAddress 字段
+* 在进入应用之前都可以更新。
+* @param serverAddress 服务器地址，如 http://192.168.0.55:8181/
+*/
+updateServerAddress(serverAddress: string): void;
+/**
  *
  * @param id sdk id 初始化sdkid
  * @returns
  */
 initSDKAuthCode(id: string): Promise<void>;
 /**
+ * 使用平行云托管平台时，使用 connectWithPxyHost 连接云端应用
+ * 托管平台 https://www.pingxingyun.com/console/#/
+ * @param params 同 connect 方法
+ * @return 同 connect 方法
+ */
+connectWithPxyHost(params: {
+    appliId: string;
+    playerMode?: number;
+    userType?: number;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
+    taskId?: string;
+    regionId?: string;
+    groupId?: string;
+}): Promise<void>;
+/**
  * 连接云端渲染资源
  * @params appID 云端资源的 ID
  * @returns Promise 调用接口并校验授权通过返回成功并自动开始连接
- */
+ * Promise 返回的错误对象：
+ * {
+        // type 0 渲染资源不足导致的错误，1 其他错误, 可用 type == 0 判断是否是渲染资源不足类型的错误
+        type: 0,
+
+        // 渲染资源不足时的事件类型，其他情况可能不返回，比如网络错误
+        eventType?：LarkSRClientEvent.RESOURCE_NOT_ENOUGH,
+
+        // 服务端返回的错误码，服务端请求正确返回时存在。需要注意渲染资源不足类型的错误码。
+        // 可用 type == 0 判断是否是渲染资源不足类型的错误,再用 code 进行细节处理，或者只用 type == 0 进行处理。
+        // 813=当前应用的运行数量已达到最大值：{0},请稍后再试
+        // 814=同一appKey下的应用运行数量达到最大值：{0}，请稍后再试
+        // 815=应用运行数量已达到最大授权并发数量，请稍后再试
+        // 816=VR应用运行数量已达到最大授权并发数量，请稍后再试
+        // 817=渲染资源不足，请稍后再试
+        // 820=暂无活跃的GPU节点
+        // 821=节点资源使用率已达到设置的阈值
+        // 823=单节点运行应用数量已达到单节点最大授权并发数量，请稍后再试
+        code?: 817,
+
+        // 错误信息
+        message:? "",
+    }
+    *
+    */
 connect(params: {
     appliId: string;
     playerMode?: number;
     userType?: number;
-    roomCode?: string;
+    roomCode?: string; // LarkXR 3.2.21废弃
+    authCode?: string; // LarkXR 3.2.21新增
     taskId?: string;
     clientMac?: string;
     groupId?: string;
@@ -29,7 +76,7 @@ connect(params: {
     appKey?: string;
     timestamp?: string;
     signature?: string;
-}): Promise<void>;
+} | any): Promise<void>;
 /**
  * 重新开始云渲染流程
  */
@@ -242,6 +289,7 @@ getMouseButtonType(button: 'left' | 'mid' | 'right'): CloudLark.MouseKey;
 /**
  * 发送文字消息给数据通道
  * 注意 云端应用要继承数据通道功能
+ * > V3.2.314 版本对应服务器版本和数据通道版本为 3.2.5.1 及以上
  * @param text 文字
  */
 sendTextToDataChannel(text: string): void;
@@ -297,7 +345,8 @@ larksr.on('aivoicedmresult', (e) => {
 客户端打开后云端应用可直接通过读取声卡上的麦克风接收到音频。
 
 > 该功能匹配的服务端版本最低为 V3.2.51
-> 使用该功能要注意在后台开启智能语音功能
+> 使用该功能要注意在后台开启语音输入功能
+> 注意要在连接成功之后打开媒体设备。即 `mediaPlayed` 之后调用才有效
 
 ```typescript
 /**
@@ -312,6 +361,16 @@ openAudio(deviceId?: string);
  */
 closeAudio(): boolean | undefined;
 /**
+ * 暂停发送音频
+ * @returns
+ */
+pauseAudioSending(): any;
+/**
+ * 恢复发送音频
+ * @returns
+ */
+resumeAudioSending(): any;
+/**
  * 返回已连接的音频设备列表，设备列表中的设备的 deviceId 可用来打开某个音频设备
  * @returns
  */
@@ -322,15 +381,269 @@ getConnectedAudioinputDevices(): Promise<MediaDeviceInfo[] | undefined>;
  * @returns
  */
 setAudioEnable(enable: boolean): void | undefined;
+
+/**
+ * 请求浏览器打开媒体并且打开上传到服务器通道。
+ * 要注意的是在服务器连接成功之后请求打开
+ * @param constraints 参考 navigator.mediaDevices.getUserMedia(constraints)
+ * @param reset 是否重制媒体通道。true 的情况下重制整个 peerconnection
+ * @returns 打开的通道的绑定信息。管理媒体通道如关闭暂停或恢复使用。
+ */
+openUserMedia(constraints?: MediaStreamConstraints, reset?: boolean): Promise<any>;
+```
+
+larksr 配置项自动打开麦克风配置,在`new LarkSR({ ... 此处省略其他配置 ... audioInputAutoStart: true})` 时传入，
+
+> 手动传入的 `audioInputAutoStart` 优先级高于后台配置
+
+```javascript
+/**
+* 当启用音频输入功能，是否自动连入音频设备。
+* 默认关闭。
+* 需要注意默认打开的是系统中默认的音频设备。
+*/
+audioInputAutoStart?: boolean;
+```
+
+获取当前打开音频设备的状态, 如 `larksr.audioPaused`
+
+```javascript
+/**
+ * 当前打开的音频设备 ID，如果打开时没指定为空
+ */
+get audioDeviceId(): string | null | undefined;
+/**
+ * 当前打开音频的track对象，未打开状态为空
+ */
+get audioTrack(): MediaStreamTrack | null | undefined;
+/**
+ * 音频通道是否暂停
+ */
+get audioPaused(): boolean | undefined;
+```
+
+## 视频输入接口
+
+客户端打开后云端应用可直接通过读取服务端的摄像头读取视频数据。
+
+> 该功能匹配的服务端版本最低为 V3.2.61
+> 使用该功能要注意在后台应用管理中开启视频输入功能
+> 注意要在连接成功之后打开媒体设备。即 `mediaPlayed` 之后调用才有效
+
+```typescript
+/**
+ * 打开一个视频设备，要注意浏览器限制在 https 或者 localhost 下才能打开视频
+ * @param audio boolean 是否同时开启音频
+ * @param cameraId 视频设备id，如果不传将打开默认设备。@see getConnectedVideoinputDevices
+ * @param width 限制打开设备的宽
+ * @param height 限制打开设备的高
+ * @returns Promise
+ */
+openVideo(audio?: boolean, cameraId?: string, width?: number, height?: number): Promise<any>;
+/**
+ * 打开摄像头设备
+ * @param cameraId 摄像头设备ID，@see getConnectedVideoinputDevices
+ * @param minWidth 限制打开设备的宽
+ * @param minHeight 限制打开设备的高
+ * @returns @see openUserMedia
+ */
+openCamera(cameraId: string, minWidth?: number, minHeight?: number): Promise<any>;
+/**
+ * 打开默认媒体设备，要注意浏览器限制在 https 或者 localhost 下
+ * 如果需要指定特殊的媒体设备请单独使用 @see openAudio @see openVideo
+ * @param video 是否包含视频
+ * @param audio 是否包含音频
+ * @returns Promise
+ */
+openDefaultMedia(video?: boolean, audio?: boolean)>;
+/**
+ * 返回已连接的视频设备
+ * @returns Promise<MediaDeviceInfo[]>
+ */
+getConnectedVideoinputDevices();
+/**
+ * 设置当前已开启的视频track是否启用状态
+ * @param enable 是否启用
+ * @returns void
+ */
+setVideoEnable(enable: boolean);
+
+/**
+ * 暂停发送视频
+ * @returns
+ */
+pauseVideoSending(): any;
+/**
+ * 恢复发送视频
+ * @returns
+ */
+resumeVideoSending(): any;
+
+/**
+ * 关闭当前已打开的视频设备
+ * @returns
+ */
+closeVideo(): any;
+/**
+ * 关闭当前已打开的共享设备如共享的标签页等
+ * @returns
+ */
+closeShare(): any;
+/**
+ * 请求浏览器打开媒体并且打开上传到服务器通道。
+ * 要注意的是在服务器连接成功之后请求打开
+ * @param constraints 参考 navigator.mediaDevices.getUserMedia(constraints)
+ * @param reset 是否重制媒体通道。true 的情况下重制整个 peerconnection
+ * @returns 打开的通道的绑定信息。管理媒体通道如关闭暂停或恢复使用。
+ */
+openUserMedia(constraints?: MediaStreamConstraints, reset?: boolean): Promise<any>;
+```
+
+larksr 配置项自动打开视频输入配置,在`new LarkSR({ ... 此处省略其他配置 ... videoInputAutoStart: true})` 时传入
+
+> 手动传入的 `videoInputAutoStart` 优先级高于后台配置
+
+```javascript
+/**
+ * 当启用视频输入功能，是否自动连入视频设备。
+ * 默认关闭。
+ * 需要注意默认打开的是系统中默认的视频设备。
+ */
+videoInputAutoStart?: boolean;
+```
+
+获取当前打开视频设备的状态,如 `larksr.videoPaused`
+
+```javascript
+/**
+ * 当前打开视频设备 ID，如果打开时没指定特设备id为空
+ */
+get videoDeviceId(): string | null | undefined;
+/**
+ * 当前打开视频track对象，未打开状态为空
+ */
+get videoTrack(): MediaStreamTrack | null | undefined;
+/**
+ * 视频通道是否暂停
+ */
+get videoPaused(): boolean | undefined;
+```
+
+## 云端直播推流功能
+
+> 服务端 3.2.7.0 添加， 要注意使用云端直播推流功能要在后台应用管理中开启该功能
+
+```javascript
+/**
+* 启动云端推流功能
+* @param params {
+*  // rtmp push url 必须填
+*  path: "",
+*  //rtmp push key
+*  key: "",
+*  // 推流的宽
+*  width: 1280,
+*  // 推流的高
+*  height: 720,
+*  framerate: 30,
+*  // kbps
+*  bitrate: 1024 * 2,
+*  // 是否支持断线重连
+*  reconnect: true,
+*  //最大重连次数
+*  reconnectRetries: 3,
+*  //是否串流麦克风(语音输入支持的情况)
+*  voice: audioInput,
+* }
+* @returns Promise
+*/
+StartCloudLiveStreaming(params: CloudLark.IRtmp_Start): Promise<void> | undefined;
+/**
+* 关闭云端推流功能
+* @returns
+*/
+StopLiveStreaming(): void | undefined;
+```
+
+云端直播的相关状态参考 `RTMP_STREAM_STATE` 和 `RTMP_STREAM_ERROR` 两个事件
+
+```javascript
+/**
+* 服务端 3.2.7.0 添加
+* rtmp 直播推流状态
+*/
+RTMP_STREAM_STATE = "rtmpstreamstate",
+/**
+* 服务端 3.2.7.0 添加
+* rtmp 直播推流出错
+*/
+RTMP_STREAM_ERROR = "rtmpstreamerror"
+```
+
+## 鸟瞰模式
+
+```typescript
+/**
+ * 开始鸟瞰模式
+ */
+startAerialview(viewbox: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}, interval: number | undefined, thumbnailWidth: 120, thumbnailHeight: 120): void;
+/**
+ * 更新鸟瞰模式区域
+ */
+updateAerialview(viewbox: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+}): void;
+/**
+ * 停止鸟瞰模式区域
+ */
+stopAerialview(): void;
+```
+
+## 调整参数
+
+```typescript
+/**
+ * 动态设置码率 单位 kbps
+ * @param bitrateKbps
+ */
+setVideoBitrateKbps(bitrateKbps: number): void;
+/**
+ * 动态设置帧率
+ */
+setVideoFps(fps: number): void;
+/**
+ * 动态设置云端 debug 窗口
+ */
+setCloudDebugLayout(open: boolean): void;
+/**
+ * 重启云端应用
+ */
+restartCloudApp(): void;
+/**
+ * 设置云端应用大小
+ */
+setCloudAppSize(width: number, height: number): void;
 ```
 
 ## 其他
 
 ```typescript
 /**
-* 采集一帧图像
-*/
-captrueFrame(data: any)
+ * 采集一帧图像
+ * @params data: any 抛出采集事件时抛出的附加data，比如采集的时间戳
+ * @params option:  { width: number, height: number } 截图的宽高，如果未设置则使用云端应用窗口的宽高
+ * @return { data: any, base64: base64string } 返回传入的 data 和采集的 base64 字符串
+ */
+captrueFrame(data: any, option?: { width: number; height: number;})
+
 /**
  * 设置是否强制横屏显示内容.
  * handelRootElementSize 必须设置为 true 才有作用。
@@ -338,4 +651,8 @@ captrueFrame(data: any)
  * @param force 是否强制横屏
  */
 setMobileForceLandScape(force: boolean): void;
+/**
+ * 从DOM种删除渲染组件，注意删除渲染组件之后将无法再次进入应用，所有状态将失效,不可恢复，只能重新new LarkSR
+ */
+destroy(): void;
 ```
