@@ -47,3 +47,5 @@
 * [8.1 How To And Quick Start](./how_to/unity/quick_start_unity3d.md)
     * [8.2 Quick Start - Unity3D](./how_to/unity/quick_start_unity3d.md)
     * [8.3 Quick Start - Unreal](./how_to/ue/quick_start_unreal.md)
+
+    * [8.4 Get started with LarkXR Quest Client](./how_to/quest/quick_start_quest.md)
