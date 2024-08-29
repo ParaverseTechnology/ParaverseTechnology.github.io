@@ -24,7 +24,7 @@ SDK 功能包括:
 ### 注意
 
 > V3.2.30 仅支持服务端 [V3.2.3.1](https://www.pingxingyun.com/devCenter.html) 以上版本。
-> [老版本 SDK Demo 下载](https://github.com/pingxingyun/lark_sr_websdk_demos/releases/tag/V3.2.10)
+> [老版本 SDK Demo 下载](https://github.com/ParaverseTechnology/lark_sr_websdk_demos/releases/tag/V3.2.10)
 
 ## 快速接入
 
@@ -98,6 +98,6 @@ SDK 加载成功之后，非模块模式下，SDK 挂载为全局对象 larksr_w
 
 更多使用方式和 API 文档可以参考下面项目和 doc 文件夹下的详细文档
 
-[Demos](https://github.com/pingxingyun/lark_sr_websdk_demos)
+[Demos](https://github.com/ParaverseTechnology/lark_sr_websdk_demos)
 
 [Docs](https://pingxingyun.github.io/webclient_sdk/)

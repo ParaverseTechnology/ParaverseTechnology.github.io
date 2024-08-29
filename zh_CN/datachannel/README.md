@@ -1,8 +1,8 @@
 # 使用预发布的 Lark Plugin 接入
 
 Download: 
-[main lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/datachannel/tree/main/doc/unity)
-[releases](https://github.com/pingxingyun/datachannel/releases/tag/3.2.8.1)
+[main lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/ParaverseTechnology/datachannel/tree/main/doc/unity)
+[releases](https://github.com/ParaverseTechnology/datachannel/releases/tag/3.2.8.1)
 
 插件发布环境 Unity3D 2019.4.41f1 windows 版
 
@@ -18,7 +18,7 @@ Download:
 
 ![import](./doc-assets/import_1.jpg)
 
-* 找到 [lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/pingxingyun/datachannel/tree/main/doc/unity) 文件存放位置并打开
+* 找到 [lark_datachannel_unity3d_export_unity2019.unitypackage](https://github.com/ParaverseTechnology/datachannel/tree/main/doc/unity) 文件存放位置并打开
 
 ![import](./doc-assets/import_2.png)
 
@@ -128,7 +128,7 @@ Demo 场景封装了基本使用流程，可配合 Web 客户端 Demo 一起使�
 
 ### 智能语音功能
 
-> 网页端智能语音输入 Demo 参考:https://github.com/pingxingyun/vh-webclient
+> 网页端智能语音输入 Demo 参考:https://github.com/ParaverseTechnology/vh-webclient
 
 > Lark Plugin 文件夹下保护一个 naudio 库，用于 Demo 场景中播放 mp3
 
