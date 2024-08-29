@@ -119,7 +119,7 @@
 ![upload](img_ue_datachannel_2/27.png)
 
 > 数据通道连通后可以根据业务需要进行网页的二次开发对接。
-> 可参考项目[lark_xr_unity3d_demos](https://github.com/pingxingyun/lark_xr_unity3d_demos) [vh-webclient](https://github.com/pingxingyun/vh-webclient) 中的网页前端代码
+> 可参考项目[lark_xr_unity3d_demos](https://github.com/ParaverseTechnology/lark_xr_unity3d_demos) [vh-webclient](https://github.com/ParaverseTechnology/vh-webclient) 中的网页前端代码
 
 ## 智能语音相关功能
 
