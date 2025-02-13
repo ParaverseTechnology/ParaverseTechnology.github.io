@@ -611,40 +611,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;"><b></b>SDK ID &#x52A0;&#x5BC6;&#x914D;&#x7F6E;</a></li></ul></div><a href="#sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;"><a name="sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;" class="anchor-navigation-ex-anchor" href="#sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;" class="plugin-anchor" href="#sdk-id-&#x52A0;&#x5BC6;&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>SDK ID &#x52A0;&#x5BC6;&#x914D;&#x7F6E;</h1>
-<p>&#x4F7F;&#x7528; larksr SDK &#x9996;&#x5148;&#x9700;&#x8981;&#x4ECE;&#x5E73;&#x884C;&#x4E91;&#x5546;&#x52A1; business@pingxingyun.com &#x6216;&#x8005;&#x5728; <a href="https://www.pingxingyun.com/console" target="_blank">https://www.pingxingyun.com/console</a> &#x83B7;&#x53D6; SDK &#x6388;&#x6743;&#x7801;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x7684;&#x6388;&#x6743;&#x7801;&#xFF09;&#x3002;</p>
-<p>&#x901A;&#x8FC7; larksr config &#x4F20;&#x5165; <code>authCode</code> &#x6216;&#x8005;&#x901A;&#x8FC7; larksr.initSDKAuthCode(&apos;&#x60A8;&#x7684;SDKID&apos;) &#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x6388;&#x6743;&#x7801;&#x3002;</p>
-<p>&#x4E3A;&#x4FDD;&#x62A4; SDK ID &#x7684;&#x5B89;&#x5168;&#x6027;&#xFF0C;&#x53EF;&#x4EE5;&#x4ECE;&#x670D;&#x52A1;&#x7AEF; 3.2.3.0 &#x5F00;&#x59CB;&#x53EF;&#x4EE5;&#x5BF9; SDK ID &#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#x914D;&#x7F6E;&#x3002;</p>
-<p>&#x914D;&#x7F6E; SDK &#x52A0;&#x5BC6;&#xFF1A;</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#sdk-id-encryption-configuration"><b></b>SDK ID Encryption Configuration</a></li></ul></div><a href="#sdk-id-encryption-configuration" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="sdk-id-encryption-configuration"><a name="sdk-id-encryption-configuration" class="anchor-navigation-ex-anchor" href="#sdk-id-encryption-configuration"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sdk-id-encryption-configuration" class="plugin-anchor" href="#sdk-id-encryption-configuration"><i class="fa fa-link" aria-hidden="true"></i></a>SDK ID Encryption Configuration</h1>
+<p>To use the larksr SDK, you first need to obtain an SDK authorization code from Pingxingyun Business (business@pingxingyun.com) or at <a href="https://www.pingxingyun.com/console" target="_blank">https://www.pingxingyun.com/console</a> (note that this is not the server-side authorization code).</p>
+<p>Pass the <code>authCode</code> through larksr config or set the authorization code using the method <code>larksr.initSDKAuthCode(&apos;YourSDKID&apos;)</code>.</p>
+<p>To protect the security of the SDK ID, from server version 3.2.3.0 onwards, you can configure SDK ID encryption.</p>
+<p>Configure SDK encryption:</p>
 <ol>
-<li><p>&#x9996;&#x5148;&#x5728; larkxr &#x5E73;&#x53F0;&#x540E;&#x53F0;&#x767B;&#x9646;&#xFF0C;&#x627E;&#x5230;&#x7CFB;&#x7EDF;&#x8BBE;&#x5B9A;-&gt;&#x63A5;&#x5165;&#x7BA1;&#x7406;-&gt;SDKID&#x5BC6;&#x94A5;&#x7BA1;&#x7406;&#x751F;&#x6210; SDK ID &#x52A0;&#x5BC6; KEY</p>
+<li><p>First, log in to the larkxr platform backend, find System Settings -&gt; Access Management -&gt; SDKID Key Management to generate an SDK ID encryption key.</p>
 </li>
-<li><p>&#x5BF9; SDK ID &#x8FDB;&#x884C;&#x52A0;&#x5BC6;</p>
-<p> &#x4EE5;&#x4E0B; java &#x4EE3;&#x7801;&#x4E3A;&#x4F8B;:</p>
-<pre><code class="lang-java"> <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-     <span class="hljs-comment">/**
-     * <span class="hljs-doctag">@param</span> res   &#x88AB;&#x52A0;&#x5BC6;&#x7684;&#x539F;&#x751F;&#x5B57;&#x7B26;&#x4E32;
-     * <span class="hljs-doctag">@param</span> key  16&#x4F4D;&#x5B57;&#x7B26;&#x4F5C;&#x4E3A;&#x52A0;&#x5BC6;&#x7684;key
-     */</span>
-     <span class="hljs-keyword">try</span> {
-         String res = <span class="hljs-string">&quot;&#x88AB;&#x52A0;&#x5BC6;&#x7684;&#x539F;&#x751F;&#x5B57;&#x7B26;&#x4E32;&quot;</span>;
-         String key = <span class="hljs-string">&quot;16&#x4F4D;&#x5B57;&#x7B26;&#x4F5C;&#x4E3A;&#x52A0;&#x5BC6;&#x7684;key&quot;</span>;
-         String ALGORITHM = <span class="hljs-string">&quot;AES&quot;</span>;
-         String CHARSET = <span class="hljs-string">&quot;UTF-8&quot;</span>;
-         SecretKeySpec sks = <span class="hljs-keyword">new</span> SecretKeySpec(key.getBytes(CHARSET), ALGORITHM);
-         Cipher cipher = Cipher.getInstance(ALGORITHM);
-         cipher.init(cipher.ENCRYPT_MODE, sks);
-         <span class="hljs-keyword">byte</span>[] result = cipher.doFinal(res.getBytes());
-         <span class="hljs-comment">// BASE64Encoder encoder = new BASE64Encoder();      //java8</span>
-         Base64.Encoder encoder = Base64.getEncoder(); <span class="hljs-comment">//java9+</span>
-         System.out.println(encoder.encodeToString(result));
-     }<span class="hljs-keyword">catch</span> (Exception e){
-     }
- }
+<li><p>Encrypt the SDK ID</p>
+</li>
+</ol>
+<p>The following is an example in Java:</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+    <span class="hljs-comment">/**
+    * <span class="hljs-doctag">@param</span> res   The original string to be encrypted
+    * <span class="hljs-doctag">@param</span> key   16-character key for encryption
+    */</span>
+    <span class="hljs-keyword">try</span> {
+        String res = <span class="hljs-string">&quot;The original string to be encrypted&quot;</span>;
+        String key = <span class="hljs-string">&quot;16-character key for encryption&quot;</span>;
+        String ALGORITHM = <span class="hljs-string">&quot;AES&quot;</span>;
+        String CHARSET = <span class="hljs-string">&quot;UTF-8&quot;</span>;
+        SecretKeySpec sks = <span class="hljs-keyword">new</span> SecretKeySpec(key.getBytes(CHARSET), ALGORITHM);
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+        cipher.init(cipher.ENCRYPT_MODE, sks);
+        <span class="hljs-keyword">byte</span>[] result = cipher.doFinal(res.getBytes());
+        <span class="hljs-comment">// BASE64Encoder encoder = new BASE64Encoder();      //java8</span>
+        Base64.Encoder encoder = Base64.getEncoder(); <span class="hljs-comment">//java9+</span>
+        System.out.println(encoder.encodeToString(result));
+    } <span class="hljs-keyword">catch</span> (Exception e) {
+    }
+}
 </code></pre>
-</li>
-<li><p>&#x83B7;&#x53D6;&#x5230;&#x52A0;&#x5BC6;&#x597D;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x4F20;&#x5165; lark &#x914D;&#x7F6E;&#x4E2D;&#x5373;&#x53EF;&#x3002;</p>
-</li>
+<ol>
+<li>Pass the encrypted string into the lark configuration.</li>
 </ol>
 
                                 
@@ -689,7 +690,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.7 SDK ID encryption","level":"2.1.7","depth":2,"next":{"title":"1.8 Update","level":"2.1.8","depth":2,"path":"webclient_sdk/update.md","ref":"./webclient_sdk/update.md","articles":[]},"previous":{"title":"1.6.2 Event Code","level":"2.1.6","depth":2,"path":"webclient_sdk/event_codes.md","ref":"./webclient_sdk/event_codes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/sdkid_encryption.md","mtime":"2024-01-30T01:51:04.478Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-29T08:34:45.931Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"1.7 SDK ID encryption","level":"2.1.7","depth":2,"next":{"title":"1.8 Update","level":"2.1.8","depth":2,"path":"webclient_sdk/update.md","ref":"./webclient_sdk/update.md","articles":[]},"previous":{"title":"1.6.2 Event Code","level":"2.1.6","depth":2,"path":"webclient_sdk/event_codes.md","ref":"./webclient_sdk/event_codes.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/sdkid_encryption.md","mtime":"2025-02-13T07:56:32.278Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-13T08:03:59.255Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

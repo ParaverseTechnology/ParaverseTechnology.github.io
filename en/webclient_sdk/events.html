@@ -611,221 +611,221 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;"><b></b>LarkSR &#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><b></b>&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;</a></li></ul></ul></div><a href="#larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;"><a name="larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;" class="anchor-navigation-ex-anchor" href="#larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;" class="plugin-anchor" href="#larksr-&#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;"><i class="fa fa-link" aria-hidden="true"></i></a>LarkSR &#x4E8B;&#x4EF6;&#x7CFB;&#x7EDF;</h1>
-<p>&#x5728; LarkSR &#x6574;&#x4E2A;&#x751F;&#x547D;&#x5468;&#x671F;&#x5185;&#x4F1A;&#x629B;&#x51FA;&#x591A;&#x79CD;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#x3002;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;:</p>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#larksr-event-system"><b></b>LarkSR Event System</a></li><ul><li><span class="title-icon "></span><a href="#complete-event-definitions"><b></b>Complete Event Definitions</a></li></ul></ul></div><a href="#larksr-event-system" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="larksr-event-system"><a name="larksr-event-system" class="anchor-navigation-ex-anchor" href="#larksr-event-system"><i class="fa fa-link" aria-hidden="true"></i></a><a name="larksr-event-system" class="plugin-anchor" href="#larksr-event-system"><i class="fa fa-link" aria-hidden="true"></i></a>LarkSR Event System</h1>
+<p>Throughout the lifecycle of LarkSR, various event notifications will be thrown. The usage is similar to:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> larksr;
 
 <span class="hljs-comment">// create code</span>
 ...
 
-<span class="hljs-comment">// &#x76D1;&#x542C;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x4E8B;&#x4EF6;</span>
+<span class="hljs-comment">// Listen for the connection success event</span>
 larksr.on(<span class="hljs-string">&apos;connect&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{ 
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;LarkSRClientEvent CONNECT&quot;</span>, e); 
 });
 </code></pre>
-<p>&#x6216;&#x8005;&#x4F7F;&#x7528;&#x5BFC;&#x51FA;&#x679A;&#x4E3E;&#x503C;</p>
+<p>Or use the exported enum values</p>
 <pre><code class="lang-javascript">larksr.on(LarkSRClientEvent.TASK_CREATE_SUCCESS, (e) =&gt; { 
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;LarkSRClientEvent TASK_CREATE_SUCCESS&quot;</span>, e); 
 });
 </code></pre>
-<p>&#x5176;&#x4E2D; <code>LarkEvent = &apos;larkevent&apos;</code>, <code>ERROR = &apos;error&apos;</code>, <code>INFO = &apos;info&apos;</code> &#x8FD9;&#x4E09;&#x4E2A;&#x4E8B;&#x4EF6;&#x4E2D;&#x9644;&#x52A0; code &#x5B57;&#x6BB5;&#xFF0C;code &#x5B57;&#x6BB5;&#x9644;&#x52A0;&#x4E8B;&#x4EF6;&#x7801;&#xFF1A;<a href="event_codes.html">event_codes</a>
-<a href="event_codes.html">event_codes</a> &#x4E2D;&#x7684;&#x4E8B;&#x4EF6; code &#x503C;&#xFF0C;&#x5728; LarkEvent &#x4E8B;&#x4EF6;&#x4E2D;&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x3002;</p>
-<h2 id="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><a name="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;" class="plugin-anchor" href="#&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;</h2>
+<p>The <code>LarkEvent = &apos;larkevent&apos;</code>, <code>ERROR = &apos;error&apos;</code>, <code>INFO = &apos;info&apos;</code> events have an attached code field, which includes event codes: <a href="event_codes.html">event_codes</a>
+The event code values in <a href="event_codes.html">event_codes</a> will be thrown in the LarkEvent event.</p>
+<h2 id="complete-event-definitions"><a name="complete-event-definitions" class="anchor-navigation-ex-anchor" href="#complete-event-definitions"><i class="fa fa-link" aria-hidden="true"></i></a><a name="complete-event-definitions" class="plugin-anchor" href="#complete-event-definitions"><i class="fa fa-link" aria-hidden="true"></i></a>Complete Event Definitions</h2>
 <pre><code class="lang-javascript"><span class="hljs-comment">/**
- * LarkSR &#x5B9E;&#x4F8B;&#x5B8C;&#x6574;&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;
+ * Complete event definitions for LarkSR instance
  */</span>
 declare <span class="hljs-keyword">const</span> enum LarkSRClientEvent {
     <span class="hljs-comment">/**
-     * TASK &#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x8FD4;&#x56DE; Task &#x76F8;&#x5173;&#x4FE1;&#x606F;
+     * TASK creation successful, returns Task related information
      */</span>
     TASK_CREATE_SUCCESS = <span class="hljs-string">&quot;taskcreatesuccess&quot;</span>,
     <span class="hljs-comment">/**
-     * TASK &#x521B;&#x5EFA;&#x5931;&#x8D25;
+     * TASK creation failed
      */</span>
     TASK_CREATE_FAILED = <span class="hljs-string">&quot;taskcreatefailed&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x6E32;&#x67D3;&#x8D44;&#x6E90;&#x4E0D;&#x8DB3;
-      * {
-            // &#x670D;&#x52A1;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x9519;&#x8BEF;&#x7801;&#xFF0C;&#x670D;&#x52A1;&#x7AEF;&#x8BF7;&#x6C42;&#x6B63;&#x786E;&#x8FD4;&#x56DE;&#x65F6;&#x5B58;&#x5728;&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x6E32;&#x67D3;&#x8D44;&#x6E90;&#x4E0D;&#x8DB3;&#x7C7B;&#x578B;&#x7684;&#x9519;&#x8BEF;&#x7801;&#x3002;
-            // &#x53EF;&#x7528; type == 0 &#x5224;&#x65AD;&#x662F;&#x5426;&#x662F;&#x6E32;&#x67D3;&#x8D44;&#x6E90;&#x4E0D;&#x8DB3;&#x7C7B;&#x578B;&#x7684;&#x9519;&#x8BEF;,&#x518D;&#x7528; code &#x8FDB;&#x884C;&#x7EC6;&#x8282;&#x5904;&#x7406;&#xFF0C;&#x6216;&#x8005;&#x53EA;&#x7528; type == 0 &#x8FDB;&#x884C;&#x5904;&#x7406;&#x3002;
-            // 813=&#x5F53;&#x524D;&#x5E94;&#x7528;&#x7684;&#x8FD0;&#x884C;&#x6570;&#x91CF;&#x5DF2;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x503C;&#xFF1A;{0},&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
-            // 814=&#x540C;&#x4E00;appKey&#x4E0B;&#x7684;&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x6570;&#x91CF;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x503C;&#xFF1A;{0}&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
-            // 815=&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x6570;&#x91CF;&#x5DF2;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x6388;&#x6743;&#x5E76;&#x53D1;&#x6570;&#x91CF;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
-            // 816=VR&#x5E94;&#x7528;&#x8FD0;&#x884C;&#x6570;&#x91CF;&#x5DF2;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x6388;&#x6743;&#x5E76;&#x53D1;&#x6570;&#x91CF;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
-            // 817=&#x6E32;&#x67D3;&#x8D44;&#x6E90;&#x4E0D;&#x8DB3;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
-            // 820=&#x6682;&#x65E0;&#x6D3B;&#x8DC3;&#x7684;GPU&#x8282;&#x70B9;
-            // 821=&#x8282;&#x70B9;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x7387;&#x5DF2;&#x8FBE;&#x5230;&#x8BBE;&#x7F6E;&#x7684;&#x9608;&#x503C;
-            // 823=&#x5355;&#x8282;&#x70B9;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x6570;&#x91CF;&#x5DF2;&#x8FBE;&#x5230;&#x5355;&#x8282;&#x70B9;&#x6700;&#x5927;&#x6388;&#x6743;&#x5E76;&#x53D1;&#x6570;&#x91CF;&#xFF0C;&#x8BF7;&#x7A0D;&#x540E;&#x518D;&#x8BD5;
+     * Insufficient rendering resources
+     * {
+            // Error code returned by the server, present when the server request is correct. Pay attention to the error codes for insufficient rendering resources.
+            // Use type == 0 to determine if it is an insufficient rendering resource error, then use code for detailed handling, or just use type == 0 for handling.
+            // 813=The current number of running applications has reached the maximum: {0}, please try again later
+            // 814=The number of running applications under the same appKey has reached the maximum: {0}, please try again later
+            // 815=The number of running applications has reached the maximum authorized concurrency, please try again later
+            // 816=The number of running VR applications has reached the maximum authorized concurrency, please try again later
+            // 817=Insufficient rendering resources, please try again later
+            // 820=No active GPU nodes
+            // 821=Node resource usage has reached the set threshold
+            // 823=The number of running applications on a single node has reached the maximum authorized concurrency, please try again later
             code?: 817,
 
-            // &#x9519;&#x8BEF;&#x4FE1;&#x606F;
+            // Error message
             message:? &quot;&quot;,
         }
      *
      */</span>
     RESOURCE_NOT_ENOUGH = <span class="hljs-string">&quot;resourcenotenough&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x8FDE;&#x63A5;&#x6E32;&#x67D3;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F; .
+     * Successfully connected to the rendering server.
      */</span>
     CONNECT = <span class="hljs-string">&quot;connect&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x767B;&#x5F55;&#x6210;&#x529F;&#x65F6;&#x89E6;&#x53D1;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x7528;&#x6237;id .
+     * Triggered when login is successful, returns the current user id.
      */</span>
     LOGIN_SUCCESS = <span class="hljs-string">&quot;loginsuccess&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x65E0;&#x64CD;&#x4F5C;&#x8D85;&#x65F6;&#x65F6;&#x89E6;&#x53D1; .
+     * Triggered when there is no operation timeout.
      */</span>
     NO_OPERATION_TIMEOUT = <span class="hljs-string">&quot;operatetimeout&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x8FDE;&#x63A5;&#x5173;&#x95ED;.
+     * Connection closed.
      */</span>
     CLOSE = <span class="hljs-string">&quot;close&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x5173;&#x95ED;&#xFF0C;&#x4F46;&#x8FDE;&#x63A5;&#x672A;&#x5173;&#x95ED;
+     * Cloud application closed, but connection not closed
      */</span>
     APP_CLOSE = <span class="hljs-string">&quot;appclose&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x83B7;&#x53D6;&#x5230;&#x8FDC;&#x7AEF;&#x89C6;&#x9891;&#x6D41; .
+     * Received remote video stream.
      */</span>
     GOT_REMOTE_STREAM = <span class="hljs-string">&quot;gotremotestream&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x83B7;&#x53D6;&#x5230;&#x8FDC;&#x7AEF;&#x97F3;&#x9891;&#x6D41; .
+     * Received remote audio stream.
      */</span>
     GOT_REMOTE_AUDIO_STREAM = <span class="hljs-string">&quot;gotremoteaudiostream&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x89C6;&#x9891;&#x52A0;&#x8F7D;&#x6210;&#x529F;&#xFF0C;&#x7B49;&#x5F85;&#x64AD;&#x653E; .
+     * Video loaded successfully, waiting to play.
      */</span>
     MEDIA_LOADED = <span class="hljs-string">&quot;meidaloaded&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x89C6;&#x9891;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x6210;&#x529F; .
+     * Video autoplay successful.
      */</span>
     MEDIA_PLAY_SUCCESS = <span class="hljs-string">&quot;mediaplaysuccess&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x89C6;&#x9891;&#x81EA;&#x52A8;&#x64AD;&#x653E;&#x5931;&#x8D25; .
+     * Video autoplay failed.
      */</span>
     MEDIA_PLAY_FAILED = <span class="hljs-string">&quot;mediaplayfailed&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x81EA;&#x52A8;&#x64AD;&#x653E;&#x58F0;&#x97F3;&#x5931;&#x8D25;&#xFF0C;&#x4EE5;&#x9759;&#x97F3;&#x6A21;&#x5F0F;&#x64AD;&#x653E; .
+     * Autoplay sound failed, playing in mute mode.
      */</span>
     MEDIA_PLAY_MUTE = <span class="hljs-string">&quot;meidaplaymute&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x6E32;&#x67D3;&#x8FDE;&#x63A5;&#x72B6;&#x6001;&#x6539;&#x53D8; .
+     * Cloud rendering connection state changed.
      */</span>
     APPSTATE_CHANGE = <span class="hljs-string">&quot;appstatechange&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x5927;&#x5C0F;&#x53D8;&#x5316; .
+     * Cloud application size changed.
      */</span>
     APP_RESIZE = <span class="hljs-string">&quot;appresize&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x9F20;&#x6807;&#x6A21;&#x5F0F;&#x53D8;&#x5316;&#x65F6;&#x89E6;&#x53D1; .
+     * Triggered when the cloud application mouse mode changes.
      */</span>
     APP_MOUSE_MODE = <span class="hljs-string">&quot;appmousemode&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x9F20;&#x6807;&#x72B6;&#x6001;&#x53D8;&#x5316; .
+     * Cloud application mouse state changed.
      */</span>
     APP_CURSOR_MODE = <span class="hljs-string">&quot;appcursormode&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x73A9;&#x5BB6;&#x5217;&#x8868; .
+     * Player list.
      */</span>
     PLAYER_LIST = <span class="hljs-string">&quot;playerlist&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x89C6;&#x9891;&#x8FDE;&#x63A5;&#x72B6;&#x6001;
+     * Video connection status
      */</span>
     PEERSTATUS_REPORT = <span class="hljs-string">&quot;peerstatusreport&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x8BF7;&#x6C42;&#x8F93;&#x5165;&#x6587;&#x5B57; .
+     * Cloud application requests text input.
      */</span>
     APP_REQUEST_INPUT = <span class="hljs-string">&quot;apprequestinput&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E91;&#x7AEF;&#x5E94;&#x7528;&#x8BF7;&#x6C42;&#x624B;&#x67C4;&#x9707;&#x52A8;
+     * Cloud application requests gamepad vibration
      */</span>
     APP_REQUEST_GAMEPAD_OUPUT = <span class="hljs-string">&quot;apprequestgamepadoutput&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x622A;&#x56FE;&#x6210;&#x529F;.
+     * Screenshot successful.
      */</span>
     CAPTURE_FRAME = <span class="hljs-string">&quot;captureframe&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x6570;&#x636E;&#x901A;&#x9053;&#x6253;&#x5F00; .
+     * Data channel opened.
      */</span>
     DATACHANNEL_OPEN = <span class="hljs-string">&quot;datachannelopen&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x6570;&#x636E;&#x901A;&#x9053;&#x5173;&#x95ED; .
+     * Data channel closed.
      */</span>
     DATACHANNEL_CLOSE = <span class="hljs-string">&quot;datachannelclose&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x6570;&#x636E;&#x901A;&#x8FBE;&#x6536;&#x5230;&#x6587;&#x5B57;&#x6D88;&#x606F; .
-     * &gt; V3.2.314 &#x7248;&#x672C;&#x5BF9;&#x5E94;&#x670D;&#x52A1;&#x5668;&#x7248;&#x672C;&#x548C;&#x6570;&#x636E;&#x901A;&#x9053;&#x7248;&#x672C;&#x4E3A; 3.2.5.1 &#x53CA;&#x4EE5;&#x4E0A;
+     * Data channel received text message.
+     * &gt; V3.2.314 version corresponds to server version and data channel version 3.2.5.1 and above
      */</span>
     DATACHANNEL_TEXT = <span class="hljs-string">&quot;datachanneltext&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x6570;&#x636E;&#x901A;&#x9053;&#x6536;&#x5230;&#x5B57;&#x8282;&#x6D88;&#x606F; .
+     * Data channel received binary message.
      */</span>
     DATACHANNEL_BINARY = <span class="hljs-string">&quot;datachannelbinary&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x66F4;&#x8BE6;&#x7EC6;&#x7684;&#x4E8B;&#x4EF6;&#x72B6;&#x6001;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5411;iframe&#x5916;&#x90E8;&#x629B;&#x51FA; .
+     * More detailed event status, mainly used for throwing to the outside of the iframe.
      */</span>
     LarkEvent = <span class="hljs-string">&quot;larkevent&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x53D1;&#x751F;&#x9519;&#x8BEF;&#x65F6;&#x629B;&#x51FA;
+     * Thrown when an error occurs
      * type:     error
-     * message: &#x9519;&#x8BEF;&#x6D88;&#x606F;
-     * code:    &#x53EF;&#x80FD;&#x7684;&#x9519;&#x8BEF;&#x7801;&#x5982;&#x4E0B;, &#x9519;&#x8BEF;&#x7801;&#x7684;&#x5177;&#x4F53;&#x5B9A;&#x4E49; @see [./event_codes]
-     *          // &#x8FDE;&#x63A5;&#x670D;&#x52A1;&#x5668;&#x7684;websocket&#x4EE3;&#x7406;&#x5173;&#x95ED;
+     * message: Error message
+     * code:    Possible error codes are as follows, the specific definition of error codes @see [./event_codes]
+     *          // Websocket proxy to the server closed
      *          LK_RENDER_SERVER_CLOSE                    : 102
-     *          // &#x8FDE;&#x63A5;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x7684;websocket&#x5173;&#x95ED;
+     *          // Websocket proxy to the proxy server closed
      *          LK_PROXY_SERVER_CLOSE                     : 202
-     *          // &#x68C0;&#x6D4B;&#x7248;&#x672C;&#x5931;&#x8D25;&#xFF0C;&#x670D;&#x52A1;&#x5668;&#x548C;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7248;&#x672C;&#x5339;&#x914D;&#x3002;&#x76EE;&#x524D;&#x53EA;&#x6709;3.1&#x548C;3.2&#x5927;&#x7248;&#x672C;&#x4E0D;&#x5339;&#x914D;&#x60C5;&#x51B5;
+     *          // Version check failed, server and client version mismatch. Currently only 3.1 and 3.2 major version mismatch
      *          LK_VERSION_CHECK_FAILED                   : 301
-     *          // &#x670D;&#x52A1;&#x5668;&#x8FD4;&#x56DE;&#x521B;&#x5EFA;Task&#x5931;&#x8D25;
+     *          // Server returned Task creation failed
      *          TASK_NOTFOUND-TASK_NO_GPU_RESOURCE        : 401-404
-     *          // &#x670D;&#x52A1;&#x7AEF;&#x542F;&#x52A8;&#x6D41;&#x5A92;&#x4F53;&#x5931;&#x8D25;
+     *          // Server failed to start streaming
      *          LK_START_STREAM_PROCESS_START-FAILED-LK_START_STREAM_ENCODER_ERROR : 501-504
-     *          // RTC &#x8FDE;&#x63A5;&#x5173;&#x95ED;
+     *          // RTC connection closed
      *          LK_RTC_EVENT_PEERCONNECTION_CLOSED        : 601
-     *          // RTC &#x8FDE;&#x63A5;&#x51FA;&#x9519;
+     *          // RTC connection error
      *          LK_RTC_EVENT_PEERCONNECTION_ERROR         : 602
-     *          // RTC &#x521B;&#x5EFA;&#x51FA;&#x9519;&#xFF0C;&#x4E00;&#x822C;&#x4E3A; &#x6D4F;&#x89C8;&#x5668;&#x4E0D;&#x652F;&#x6301; webrtc
+     *          // RTC creation error, usually due to browser not supporting webrtc
      *          LK_RTC_EVENT_PEERCONNECTION_CREATE_FAILED : 603
-     *          // &#x670D;&#x52A1;&#x5668;&#x4E3B;&#x52A8;&#x8981;&#x6C42;&#x5BA2;&#x6237;&#x7AEF;&#x9000;&#x51FA;
+     *          // Server actively requests client to exit
      *          LK_NOTIFY_CLIENT_LOGOUT_PLAYER_LOGOUT     : 800
-     *          // &#x4E00;&#x4EBA;&#x64CD;&#x4F5C;&#x591A;&#x4EBA;&#x770B;&#x623F;&#x4E3B;&#x9000;&#x51FA;
+     *          // Host exits in multi-viewer mode
      *          LK_NOTIFY_CLIENT_LOGOUT_TASKOWNER_LOGOUT  : 801
      *
      */</span>
     ERROR = <span class="hljs-string">&quot;error&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x4E00;&#x822C;&#x4FE1;&#x606F;&#x63D0;&#x793A;
+     * General information prompt
      */</span>
     INFO = <span class="hljs-string">&quot;info&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x8BED;&#x97F3;&#x5BF9;&#x8BDD;&#x7684;&#x72B6;&#x6001;
+     * Voice dialogue status
      */</span>
     AI_VOICE_STATUS = <span class="hljs-string">&quot;aivoicestatus&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x8F6C;&#x6587;&#x5B57;&#x7684;&#x7ED3;&#x679C;
+     * Voice recognition to text result
      */</span>
     AI_VOICE_ASR_RESULT = <span class="hljs-string">&quot;aivoiceasrresult&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x5BF9;&#x8BDD;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;
+     * Dialogue return result
      */</span>
     AI_VOICE_DM_RESULT = <span class="hljs-string">&quot;aivoicedmresult&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x5BF9;&#x8BDD;&#x51FA;&#x9519;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;
+     * Detailed information on dialogue errors
      */</span>
     AI_VOICE_ERROR = <span class="hljs-string">&quot;aivoiceerror&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x670D;&#x52A1;&#x7AEF; 3.2.7.0 &#x6DFB;&#x52A0;
+     * Added in server 3.2.7.0
      *
      */</span>
     TOUCH_CTR_MAPPING = <span class="hljs-string">&quot;touchctrmapping&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x670D;&#x52A1;&#x7AEF; 3.2.7.0 &#x6DFB;&#x52A0;
-     * rtmp &#x76F4;&#x64AD;&#x63A8;&#x6D41;&#x72B6;&#x6001;
+     * Added in server 3.2.7.0
+     * RTMP live stream status
      */</span>
     RTMP_STREAM_STATE = <span class="hljs-string">&quot;rtmpstreamstate&quot;</span>,
     <span class="hljs-comment">/**
-     * &#x670D;&#x52A1;&#x7AEF; 3.2.7.0 &#x6DFB;&#x52A0;
-     * rtmp &#x76F4;&#x64AD;&#x63A8;&#x6D41;&#x51FA;&#x9519;
+     * Added in server 3.2.7.0
+     * RTMP live stream error
      */</span>
     RTMP_STREAM_ERROR = <span class="hljs-string">&quot;rtmpstreamerror&quot;</span>
 }
@@ -873,7 +873,7 @@ declare <span class="hljs-keyword">const</span> enum LarkSRClientEvent {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.6.1 Events","level":"2.1.5","depth":2,"next":{"title":"1.6.2 Event Code","level":"2.1.6","depth":2,"path":"webclient_sdk/event_codes.md","ref":"./webclient_sdk/event_codes.md","articles":[]},"previous":{"title":"1.5 LarkSR object Member Varibales","level":"2.1.4","depth":2,"path":"webclient_sdk/member_variables.md","ref":"./webclient_sdk/member_variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/events.md","mtime":"2024-01-30T01:51:04.475Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-29T08:34:45.931Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"1.6.1 Events","level":"2.1.5","depth":2,"next":{"title":"1.6.2 Event Code","level":"2.1.6","depth":2,"path":"webclient_sdk/event_codes.md","ref":"./webclient_sdk/event_codes.md","articles":[]},"previous":{"title":"1.5 LarkSR object Member Varibales","level":"2.1.4","depth":2,"path":"webclient_sdk/member_variables.md","ref":"./webclient_sdk/member_variables.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/events.md","mtime":"2025-02-13T07:56:17.037Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-13T08:03:59.255Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>

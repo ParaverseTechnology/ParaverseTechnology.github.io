@@ -611,25 +611,25 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#32401"><b></b>3.2.401</a></li><ul><li><span class="title-icon "></span><a href="#32401-&#x65B0;&#x589E;&#x529F;&#x80FD;"><b></b>3.2.401 &#x65B0;&#x589E;&#x529F;&#x80FD;</a></li></ul></ul></div><a href="#32401" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="32401"><a name="32401" class="anchor-navigation-ex-anchor" href="#32401"><i class="fa fa-link" aria-hidden="true"></i></a><a name="32401" class="plugin-anchor" href="#32401"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.401</h1>
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#32401"><b></b>3.2.401</a></li><ul><li><span class="title-icon "></span><a href="#new-features-in-32401"><b></b>New Features in 3.2.401</a></li></ul></ul></div><a href="#32401" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="32401"><a name="32401" class="anchor-navigation-ex-anchor" href="#32401"><i class="fa fa-link" aria-hidden="true"></i></a><a name="32401" class="plugin-anchor" href="#32401"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.401</h1>
 <blockquote>
-<p>3.2.401 &#x591A;&#x5A92;&#x4F53;&#x901A;&#x9053;&#x529F;&#x80FD;&#x5728;&#x6E32;&#x67D3;&#x670D;&#x52A1;&#x5668; 3.2.2.0+ &#x5F00;&#x542F;</p>
+<p>The multimedia channel feature of version 3.2.401 is enabled on rendering server 3.2.2.0+.</p>
 </blockquote>
-<h2 id="32401-&#x65B0;&#x589E;&#x529F;&#x80FD;"><a name="32401-&#x65B0;&#x589E;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#32401-&#x65B0;&#x589E;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="32401-&#x65B0;&#x589E;&#x529F;&#x80FD;" class="plugin-anchor" href="#32401-&#x65B0;&#x589E;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>3.2.401 &#x65B0;&#x589E;&#x529F;&#x80FD;</h2>
+<h2 id="new-features-in-32401"><a name="new-features-in-32401" class="anchor-navigation-ex-anchor" href="#new-features-in-32401"><i class="fa fa-link" aria-hidden="true"></i></a><a name="new-features-in-32401" class="plugin-anchor" href="#new-features-in-32401"><i class="fa fa-link" aria-hidden="true"></i></a>New Features in 3.2.401</h2>
 <blockquote>
-<p>&#x4EE5;&#x4E0B;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x5047;&#x5B9A; <code>larksr</code> &#x5BF9;&#x8C61;&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x3002;
-&#x6D4B;&#x8BD5;demo <a href="https://github.com/ParaverseTechnology/lark_sr_websdk_demos/tree/gh-pages" target="_blank">https://github.com/ParaverseTechnology/lark_sr_websdk_demos/tree/gh-pages</a></p>
+<p>The following sample code assumes that the <code>larksr</code> object has been initialized and connected successfully.
+Test demo: <a href="https://github.com/ParaverseTechnology/lark_sr_websdk_demos/tree/gh-pages" target="_blank">https://github.com/ParaverseTechnology/lark_sr_websdk_demos/tree/gh-pages</a></p>
 </blockquote>
-<p>(1). &#x65B0;&#x589E;&#x591A;&#x8DEF; Web &#x7AEF;&#x4E0A;&#x4F20;&#x5A92;&#x4F53;&#x529F;&#x80FD;&#x3002;&#x4F7F;&#x7528; <code>larksr.getMediaSharePeerConnection(index)</code> &#x83B7;&#x53D6;&#x4E0A;&#x4F20;&#x5A92;&#x4F53;&#x901A;&#x9053;&#x3002;</p>
-<p>&#x5E8F;&#x53F7; index &#x652F;&#x6301; 0 - 5, &#x83B7;&#x53D6;&#x5A92;&#x4F53;&#x901A;&#x9053;&#x4E4B;&#x540E;&#x7684;&#x6253;&#x5F00;&#x5A92;&#x4F53;&#x64CD;&#x4F5C;&#x548C;&#x4E4B;&#x524D;&#x7684;&#x63A5;&#x53E3;&#x76F8;&#x540C;&#x3002;&#x539F;&#x6709;&#x7684;&#x63A5;&#x53E3;&#x7B49;&#x540C;&#x4E8E; <code>getMediaSharePeerConnection(0)</code></p>
-<p>&#x4F7F;&#x7528;&#x65B9;&#x5F0F;&#x5982;</p>
+<p>(1). Added multi-channel media upload feature for the Web. Use <code>larksr.getMediaSharePeerConnection(index)</code> to get the media upload channel.</p>
+<p>The index supports 0 - 5. The media operations after obtaining the media channel are the same as the previous interface. The original interface is equivalent to <code>getMediaSharePeerConnection(0)</code>.</p>
+<p>Usage example:</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).openVideo();
 larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).closeVideo();
 </code></pre>
 <blockquote>
-<p>&#x8FDE;&#x63A5;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x901A;&#x9053;&#x4E0A;&#x4F20;&#x7684;&#x8001;&#x7248;&#x672C;&#x6E32;&#x67D3;&#x670D;&#x52A1;&#x5668;&#x65F6;&#xFF0C;&#x4EC5;&#x901A;&#x9053; 0 &#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<p>When connecting to an older version of the rendering server that does not support multi-channel upload, only channel 0 will work.</p>
 </blockquote>
-<p>(2). &#x83B7;&#x53D6;&#x5177;&#x4F53;&#x901A;&#x9053;&#x7684;&#x8FDE;&#x63A5;&#x72B6;&#x6001; <code>getStats</code> </p>
+<p>(2). Get the connection status of a specific channel using <code>getStats</code></p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).getStats()
 .then((res) =&gt; {
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;state: &quot;</span>, res);
@@ -638,14 +638,14 @@ larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).closeVide
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;get state failed&quot;</span>, e);
 })
 </code></pre>
-<p>(3). &#x8BBE;&#x7F6E;&#x5177;&#x4F53;&#x8FDE;&#x63A5;&#x901A;&#x9053;&#x7684;&#x89C6;&#x9891;&#x7F16;&#x7801; <code>preferVideoCode</code></p>
+<p>(3). Set the video encoding for a specific connection channel using <code>preferVideoCode</code></p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).preferVideoCode = <span class="hljs-string">&apos;h264&apos;</span>;
 </code></pre>
 <blockquote>
-<p>&#x5F53;&#x5F53;&#x524D;&#x6D4F;&#x89C8;&#x5668;&#x652F;&#x6301;&#x6240;&#x8BBE;&#x5B9A;&#x7684;&#x89C6;&#x9891;&#x7F16;&#x7801;&#x65F6;&#x4F18;&#x5148;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x652F;&#x6301;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;&#x7F16;&#x7801;&#x65B9;&#x5F0F;
-&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x6253;&#x5F00;&#x89C6;&#x9891;&#x8D77;&#x6548;&#xFF0C;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x89C6;&#x9891;&#x901A;&#x4E0D;&#x4F1A;&#x6709;&#x53D8;&#x5316;&#x3002;</p>
+<p>If the current browser supports the specified video encoding, it will be used preferentially. If not, the default encoding method will be used.
+The setting will take effect the next time the video is opened. The already opened video will not change.</p>
 </blockquote>
-<p>(4). &#x8BBE;&#x7F6E;&#x5177;&#x4F53;&#x8FDE;&#x63A5;&#x901A;&#x9053;&#x7684;&#x89C6;&#x9891;&#x4E0A;&#x4F20;&#x7801;&#x7387;</p>
+<p>(4). Set the video upload bitrate for a specific connection channel</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).codeRate = {
         start: <span class="hljs-number">1000</span>,
         min: <span class="hljs-number">1000</span>,
@@ -653,25 +653,25 @@ larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).closeVide
 }
 </code></pre>
 <blockquote>
-<p>&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x6253;&#x5F00;&#x89C6;&#x9891;&#x8D77;&#x6548;&#xFF0C;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x89C6;&#x9891;&#x901A;&#x4E0D;&#x4F1A;&#x6709;&#x53D8;&#x5316;&#x3002;</p>
+<p>The setting will take effect the next time the video is opened. The already opened video will not change.</p>
 </blockquote>
-<p>(5). &#x5A92;&#x4F53;&#x8FDE;&#x63A5;&#x901A;&#x9053;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x76D1;&#x542C;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;</p>
+<p>(5). Media connection channels can listen to events separately, for example:</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).on(<span class="hljs-string">&quot;rtc_state_change&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
     <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;ice state change&quot;</span>, e);
 });
 </code></pre>
-<p>(6). &#x6253;&#x5F00;&#x6216;&#x4FDD;&#x5B58;&#x4E0B;&#x6765;&#x7684;&#x5A92;&#x4F53;&#x901A;&#x9053;&#x5BF9;&#x8C61;&#x6709;&#x5355;&#x72EC;&#x7684;id, 0 - 5</p>
+<p>(6). The opened or saved media channel object has a separate id, 0 - 5</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).id
 </code></pre>
-<p>(7). &#x5F3A;&#x5236;&#x4F7F;&#x7528;&#x753B;&#x5E03;&#x6A21;&#x5F0F;&#xFF0C;&#x89C6;&#x9891;&#x901A;&#x9053;&#x7684;&#x753B;&#x5E03;&#x53EF;&#x4EE5;&#x987A;&#x65F6;&#x9488;&#x6216;&#x8005;&#x9006;&#x65F6;&#x9488;&#x65CB;&#x8F6C;&#x753B;&#x9762;</p>
-<p>&#x5F00;&#x542F;&#x65CB;&#x8F6C;</p>
+<p>(7). Force the use of canvas mode, the canvas of the video channel can rotate the screen clockwise or counterclockwise</p>
+<p>Enable rotation</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).forceRenderToCanvas = <span class="hljs-literal">true</span>;
 </code></pre>
-<p>&#x5F3A;&#x5236;&#x987A;&#x65F6;&#x9488;&#x65CB;&#x8F6C;</p>
+<p>Force clockwise rotation</p>
 <pre><code class="lang-javascript">larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).canvasRender.setRotate(<span class="hljs-literal">true</span>);
 </code></pre>
 <blockquote>
-<p>&#x8BBE;&#x7F6E;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x518D;&#x6B21;&#x6253;&#x5F00;&#x89C6;&#x9891;&#x8D77;&#x6548;&#xFF0C;&#x5DF2;&#x7ECF;&#x6253;&#x5F00;&#x7684;&#x89C6;&#x9891;&#x901A;&#x4E0D;&#x4F1A;&#x6709;&#x53D8;&#x5316;&#x3002;</p>
+<p>The setting will take effect the next time the video is opened. The already opened video will not change.</p>
 </blockquote>
 
                                 
@@ -716,7 +716,7 @@ larksr.getMediaSharePeerConnection(<span class="hljs-number">0</span>).closeVide
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"1.9 Multi Media Upload","level":"2.1.9","depth":2,"next":{"title":"2.1 Native Android XR Client SDK","level":"3.1","depth":1,"path":"nativeclient_xr_sdk/README.md","ref":"./nativeclient_xr_sdk/README.md","articles":[{"title":"2.2 Update","level":"3.1.1","depth":2,"path":"nativeclient_xr_sdk/update.md","ref":"./nativeclient_xr_sdk/update.md","articles":[]}]},"previous":{"title":"1.8 Update","level":"2.1.8","depth":2,"path":"webclient_sdk/update.md","ref":"./webclient_sdk/update.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/multi_media_3_2_401.md","mtime":"2024-08-29T08:32:08.083Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2024-08-29T08:34:45.931Z"},"basePath":"..","book":{"language":"en"}});
+            gitbook.page.hasChanged({"page":{"title":"1.9 Multi Media Upload","level":"2.1.9","depth":2,"next":{"title":"2.1 Native Android XR Client SDK","level":"3.1","depth":1,"path":"nativeclient_xr_sdk/README.md","ref":"./nativeclient_xr_sdk/README.md","articles":[{"title":"2.2 Update","level":"3.1.1","depth":2,"path":"nativeclient_xr_sdk/update.md","ref":"./nativeclient_xr_sdk/update.md","articles":[]}]},"previous":{"title":"1.8 Update","level":"2.1.8","depth":2,"path":"webclient_sdk/update.md","ref":"./webclient_sdk/update.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","sharing-plus","anchor-navigation-ex"],"styles":{},"pluginsConfig":{"github":{"url":"https://pingxingyun.github.io"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["weibo","linkedin"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{}},"theme":"default","author":"fcx@pingxingyun.com","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"pingxingyun","language":"en","links":{"sidebar":{"中文":"/zh_CN/","English":"/en/","Paraverse":"https://www.paraverse.cc/","Paraverse Git":"https://github.com/ParaverseTechnology"}},"gitbook":"3.2.3","description":"Pingxingyun larkxr cloud rendering and streaming product and SDK."},"file":{"path":"webclient_sdk/multi_media_3_2_401.md","mtime":"2025-02-13T07:56:29.121Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2025-02-13T08:03:59.255Z"},"basePath":"..","book":{"language":"en"}});
         });
     </script>
 </div>
