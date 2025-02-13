@@ -81,7 +81,7 @@ export default class App extends React.Component {
             <div>
                 // ...
                 // 省略其他元素
-                <div style={{
+                <div style={ {
                         zIndex: 1000,
                         position: 'absolute', 
                         left: this.state.pointPosition.x, 
@@ -90,9 +90,9 @@ export default class App extends React.Component {
                         width: 50,
                         height: 50,
                         borderRadius: "50%"
-                    }}>
+                    } }>
                 </div>
-                <button style={{pointerEvents: "all"}} 
+                <button style={ {pointerEvents: "all"} } 
                     onClick={()=>{
                         // 获取虚拟鼠标的位置
                         console.log("touch point", this.larksr.virtualCursorPosition);
@@ -148,7 +148,7 @@ export enum APP_STATE {
     LOGIN_SUCCESS,
     RTC_CONNECTED,
     MEDIA_LOADED,
-    MEDIA_PLAED,
+    MEDIA_PLAYED,
     RTC_RETRY,
     APP_RETRY,
     BEFORE_DESTORY,
