@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.pxy.larkxr_openxr_meta",
+    "sha256_cert_fingerprints":
+    ["C8:22:5C:F4:CB:0E:E6:1E:22:AF:05:48:03:2B:44:F7:60:45:77:68:58:2E:DA:2E:5B:4D:D7:BB:FD:F7:B6:0F"]
+  }
+}]
